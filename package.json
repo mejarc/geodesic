@@ -1,0 +1,20 @@
+{
+  "name": "geodesic",
+  "version": "1.0.0",
+  "description": "A CSS toolkit for building big systems out of small parts",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "css",
+    "functional"
+  ],
+  "author": "Liam Campbell",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-parker": "^0.1.4",
+    "gulp-sass": "^2.2.0"
+  }
+}
