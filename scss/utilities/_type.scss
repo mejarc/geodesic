@@ -1,10 +1,10 @@
 /*
 
   TYPE
-  Type styles and sizes. The sizes work on a responsive scale for each class, so
-  that scaling type up as screen sizes increase doesn't require multiple classes
-  and our typography doesn't become a mess of disparate rules. Switch 'em up if
-  you need, but pay attention to how the rest of the system changes.
+  Type styles and sizes. The sizes allow for a responsive scale for each class,
+  so that scaling type up as screen sizes increase doesn't require multiple
+  classes and our typography doesn't become a mess of disparate rules. Switch
+  'em up if you need, but pay attention to how the rest of the system changes.
 
 */
 
@@ -12,43 +12,18 @@
   @include media($breakpoint) { font-size: $size; }
 }
 
-.font-tiny {
-  font-size: 12px;
-}
-.font-small {
-  font-size: 18px;
-}
-.font-medium {
-  font-size: 21px;
-  @include font-scale($large-up, 25px);
-}
-.font-large {
-  font-size: 24px;
-  @include font-scale($medium-up, 32px);
-  @include font-scale($large-up, 48px);
-}
-.font-huge {
-  font-size: 29px;
-  @include font-scale($medium-up, 39px);
-  @include font-scale($large-up, 64px);
-  @include font-scale($xlarge-up, 74px);
-}
-.font-giant {
-  font-size: 44px;
-  @include font-scale($medium-up, 56px);
-  @include font-scale($large-up, 84px);
-  @include font-scale($xlarge-up, 102px);
-}
+.font-tiny { font-size: 15px; }
+.font-small { font-size: 20px; }
+.font-medium { font-size: 24px; }
+.font-large { font-size: 32px; }
+.font-huge { font-size: 40px; }
+.font-giant { font-size: 56px; }
 
 .underline { text-decoration: underline; }
 .tracked { letter-spacing: 0.1em; }
 .uppercase { text-transform: uppercase; }
 .italic { font-style: italic; }
 
-/*
-  If we need more fonts, we might need to figure out what their exact weights
-  are and add those as classes. But let's not add more fonts if we can help it.
-*/
 .bold { font-weight: bold; }
 .heavy { font-weight: 900; }
 

@@ -94,6 +94,11 @@ html {
   box-sizing: inherit;
 }
 
+body {
+  color: #3F3E4C;
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+}
+
 /*
 
   GRID
@@ -1079,4 +1084,937 @@ html {
   .row {
     padding: 0 2.35765%;
   }
+}
+
+/*
+
+  COLORS
+  These come from the $colors list in _variables.scss
+
+*/
+.color-blue {
+  color: #6899C6;
+}
+
+.bg-blue {
+  background-color: #6899C6;
+}
+
+.color-navy {
+  color: #3F3E4C;
+}
+
+.bg-navy {
+  background-color: #3F3E4C;
+}
+
+.color-green {
+  color: #6FA25F;
+}
+
+.bg-green {
+  background-color: #6FA25F;
+}
+
+/*
+
+  SPACE
+  Defines useful spacing utilities. These are aaaaall generated based on a list
+  of steps in $space-scale. Feel free to add more, but be aware that extra steps
+  produce a lot of of rules. Be judicious.
+
+  NOTE 4/15/16: Because of how many spacing rules there are, I'm reluctant to
+  further complicate this set by adding breakpoints. In the future I may do
+  something similar to _type.scss and set up a sliding scale to minimize the
+  number of rules needed to make sane spacing happen. If you run into a problem
+  around needing different spaces at different sizes, talk to Liam.
+
+*/
+.mar-none {
+  margin: 0px;
+}
+
+.mar-t-none {
+  margin-top: 0px;
+}
+
+.mar-r-none {
+  margin-right: 0px;
+}
+
+.mar-b-none {
+  margin-bottom: 0px;
+}
+
+.mar-l-none {
+  margin-left: 0px;
+}
+
+.mar-x-none {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.mar-y-none {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.pad-none {
+  padding: 0px;
+}
+
+.pad-t-none {
+  padding-top: 0px;
+}
+
+.pad-r-none {
+  padding-right: 0px;
+}
+
+.pad-b-none {
+  padding-bottom: 0px;
+}
+
+.pad-l-none {
+  padding-left: 0px;
+}
+
+.pad-x-none {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.pad-y-none {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.mar-tiny {
+  margin: 5px;
+}
+
+.mar-t-tiny {
+  margin-top: 5px;
+}
+
+.mar-r-tiny {
+  margin-right: 5px;
+}
+
+.mar-b-tiny {
+  margin-bottom: 5px;
+}
+
+.mar-l-tiny {
+  margin-left: 5px;
+}
+
+.mar-x-tiny {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.mar-y-tiny {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.pad-tiny {
+  padding: 5px;
+}
+
+.pad-t-tiny {
+  padding-top: 5px;
+}
+
+.pad-r-tiny {
+  padding-right: 5px;
+}
+
+.pad-b-tiny {
+  padding-bottom: 5px;
+}
+
+.pad-l-tiny {
+  padding-left: 5px;
+}
+
+.pad-x-tiny {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.pad-y-tiny {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.mar-small {
+  margin: 10px;
+}
+
+.mar-t-small {
+  margin-top: 10px;
+}
+
+.mar-r-small {
+  margin-right: 10px;
+}
+
+.mar-b-small {
+  margin-bottom: 10px;
+}
+
+.mar-l-small {
+  margin-left: 10px;
+}
+
+.mar-x-small {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.mar-y-small {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.pad-small {
+  padding: 10px;
+}
+
+.pad-t-small {
+  padding-top: 10px;
+}
+
+.pad-r-small {
+  padding-right: 10px;
+}
+
+.pad-b-small {
+  padding-bottom: 10px;
+}
+
+.pad-l-small {
+  padding-left: 10px;
+}
+
+.pad-x-small {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.pad-y-small {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.mar-medium {
+  margin: 20px;
+}
+
+.mar-t-medium {
+  margin-top: 20px;
+}
+
+.mar-r-medium {
+  margin-right: 20px;
+}
+
+.mar-b-medium {
+  margin-bottom: 20px;
+}
+
+.mar-l-medium {
+  margin-left: 20px;
+}
+
+.mar-x-medium {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.mar-y-medium {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.pad-medium {
+  padding: 20px;
+}
+
+.pad-t-medium {
+  padding-top: 20px;
+}
+
+.pad-r-medium {
+  padding-right: 20px;
+}
+
+.pad-b-medium {
+  padding-bottom: 20px;
+}
+
+.pad-l-medium {
+  padding-left: 20px;
+}
+
+.pad-x-medium {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.pad-y-medium {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.mar-large {
+  margin: 40px;
+}
+
+.mar-t-large {
+  margin-top: 40px;
+}
+
+.mar-r-large {
+  margin-right: 40px;
+}
+
+.mar-b-large {
+  margin-bottom: 40px;
+}
+
+.mar-l-large {
+  margin-left: 40px;
+}
+
+.mar-x-large {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.mar-y-large {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.pad-large {
+  padding: 40px;
+}
+
+.pad-t-large {
+  padding-top: 40px;
+}
+
+.pad-r-large {
+  padding-right: 40px;
+}
+
+.pad-b-large {
+  padding-bottom: 40px;
+}
+
+.pad-l-large {
+  padding-left: 40px;
+}
+
+.pad-x-large {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.pad-y-large {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.mar-huge {
+  margin: 80px;
+}
+
+.mar-t-huge {
+  margin-top: 80px;
+}
+
+.mar-r-huge {
+  margin-right: 80px;
+}
+
+.mar-b-huge {
+  margin-bottom: 80px;
+}
+
+.mar-l-huge {
+  margin-left: 80px;
+}
+
+.mar-x-huge {
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
+.mar-y-huge {
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.pad-huge {
+  padding: 80px;
+}
+
+.pad-t-huge {
+  padding-top: 80px;
+}
+
+.pad-r-huge {
+  padding-right: 80px;
+}
+
+.pad-b-huge {
+  padding-bottom: 80px;
+}
+
+.pad-l-huge {
+  padding-left: 80px;
+}
+
+.pad-x-huge {
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+.pad-y-huge {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.mar-x-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*
+
+  TYPE
+  Type styles and sizes. The sizes allow for a responsive scale for each class,
+  so that scaling type up as screen sizes increase doesn't require multiple
+  classes and our typography doesn't become a mess of disparate rules. Switch
+  'em up if you need, but pay attention to how the rest of the system changes.
+
+*/
+.font-tiny {
+  font-size: 15px;
+}
+
+.font-small {
+  font-size: 20px;
+}
+
+.font-medium {
+  font-size: 24px;
+}
+
+.font-large {
+  font-size: 32px;
+}
+
+.font-huge {
+  font-size: 40px;
+}
+
+.font-giant {
+  font-size: 56px;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.tracked {
+  letter-spacing: 0.1em;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.heavy {
+  font-weight: 900;
+}
+
+.align-l {
+  text-align: left;
+}
+
+.align-r {
+  text-align: right;
+}
+
+.align-c {
+  text-align: center;
+}
+
+@media screen and (min-width: 0px) {
+  .align-l--small {
+    text-align: left;
+  }
+  .align-r--small {
+    text-align: right;
+  }
+  .align-c--small {
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 540px) {
+  .align-l--medium {
+    text-align: left;
+  }
+  .align-r--medium {
+    text-align: right;
+  }
+  .align-c--medium {
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .align-l--large {
+    text-align: left;
+  }
+  .align-r--large {
+    text-align: right;
+  }
+  .align-c--large {
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .align-l--xlarge {
+    text-align: left;
+  }
+  .align-r--xlarge {
+    text-align: right;
+  }
+  .align-c--xlarge {
+    text-align: center;
+  }
+}
+
+.line-solid {
+  line-height: 1;
+}
+
+.line-close {
+  line-height: 1.15;
+}
+
+.line-text {
+  line-height: 1.4;
+}
+
+/*
+
+  DISPLAY
+
+*/
+.inline {
+  display: inline;
+}
+
+.block {
+  display: block;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.table {
+  display: table;
+}
+
+.table-cell {
+  display: table-cell;
+}
+
+@media screen and (min-width: 0px) {
+  .inline--small {
+    display: inline;
+  }
+  .block--small {
+    display: block;
+  }
+  .inline-block--small {
+    display: inline-block;
+  }
+  .table--small {
+    display: table;
+  }
+  .table-cell--small {
+    display: table-cell;
+  }
+}
+
+@media screen and (min-width: 540px) {
+  .inline--medium {
+    display: inline;
+  }
+  .block--medium {
+    display: block;
+  }
+  .inline-block--medium {
+    display: inline-block;
+  }
+  .table--medium {
+    display: table;
+  }
+  .table-cell--medium {
+    display: table-cell;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .inline--large {
+    display: inline;
+  }
+  .block--large {
+    display: block;
+  }
+  .inline-block--large {
+    display: inline-block;
+  }
+  .table--large {
+    display: table;
+  }
+  .table-cell--large {
+    display: table-cell;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .inline--xlarge {
+    display: inline;
+  }
+  .block--xlarge {
+    display: block;
+  }
+  .inline-block--xlarge {
+    display: inline-block;
+  }
+  .table--xlarge {
+    display: table;
+  }
+  .table-cell--xlarge {
+    display: table-cell;
+  }
+}
+
+/*
+
+  HIDE
+
+*/
+/*
+  Totally nixes an element, making it inaccessible to screen readers and pretty
+  much anything else except javascript, which sees straight through to the DOM.
+*/
+.hide {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+.gone {
+  display: none;
+}
+
+@media screen and (min-width: 0px) {
+  .hide--small {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+  }
+  .gone--small {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 540px) {
+  .hide--medium {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+  }
+  .gone--medium {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .hide--large {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+  }
+  .gone--large {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .hide--xlarge {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+  }
+  .gone--xlarge {
+    display: none;
+  }
+}
+
+/*
+
+  FLEXBOX
+  There's a lot of rules, but these are pretty damn useful so I don't feel bad
+  about it. Not all of them are breakpoint-scoped, because that takes a lot of
+  file size per rule.
+
+  For best results, keep this open in a tab while flexing:
+  https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+  There is a strict ban on making Rae Sremmurd jokes when using flexbox.
+
+*/
+.flex {
+  display: flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-reverse {
+  flex-direction: row-reverse;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+@media screen and (min-width: 0px) {
+  .flex--small {
+    display: flex;
+  }
+  .flex-row--small {
+    flex-direction: row;
+  }
+  .flex-reverse--small {
+    flex-direction: row-reverse;
+  }
+  .flex-column--small {
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 540px) {
+  .flex--medium {
+    display: flex;
+  }
+  .flex-row--medium {
+    flex-direction: row;
+  }
+  .flex-reverse--medium {
+    flex-direction: row-reverse;
+  }
+  .flex-column--medium {
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .flex--large {
+    display: flex;
+  }
+  .flex-row--large {
+    flex-direction: row;
+  }
+  .flex-reverse--large {
+    flex-direction: row-reverse;
+  }
+  .flex-column--large {
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .flex--xlarge {
+    display: flex;
+  }
+  .flex-row--xlarge {
+    flex-direction: row;
+  }
+  .flex-reverse--xlarge {
+    flex-direction: row-reverse;
+  }
+  .flex-column--xlarge {
+    flex-direction: column;
+  }
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.items-start {
+  align-items: flex-start;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.items-baseline {
+  align-items: baseline;
+}
+
+.items-stretch {
+  align-items: stretch;
+}
+
+.self-start {
+  align-self: flex-start;
+}
+
+.self-end {
+  align-self: flex-end;
+}
+
+.self-center {
+  align-self: center;
+}
+
+.self-baseline {
+  align-self: baseline;
+}
+
+.self-stretch {
+  align-self: stretch;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.content-start {
+  align-content: flex-start;
+}
+
+.content-end {
+  align-content: flex-end;
+}
+
+.content-center {
+  align-content: center;
+}
+
+.content-between {
+  align-content: space-between;
+}
+
+.content-around {
+  align-content: space-around;
+}
+
+.content-stretch {
+  align-content: stretch;
+}
+
+/* 1. Fix for Chrome 44 bug. https://code.google.com/p/chromium/issues/detail?id=506893 */
+.flex-auto {
+  flex: 1 1 auto;
+  min-width: 0;
+  /* 1 */
+  min-height: 0;
+  /* 1 */
+}
+
+.flex-none {
+  flex: none;
+}
+
+.order-0 {
+  order: 0;
+}
+
+.order-1 {
+  order: 1;
+}
+
+.order-2 {
+  order: 2;
+}
+
+.order-3 {
+  order: 3;
+}
+
+.order-last {
+  order: 99999;
+}
+
+/*
+
+  MEDIA
+  NOTE 4/15/16: possibly move these or expand upon this file? this group seems
+  nebulously-defined at this point
+
+*/
+.constrain {
+  max-width: 100%;
+}
+
+.circle {
+  border-radius: 100%;
 }

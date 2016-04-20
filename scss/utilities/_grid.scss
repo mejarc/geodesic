@@ -7,13 +7,6 @@
 
 */
 
-$grid-sizes: (
-  'small': $small-up,
-  'medium': $medium-up,
-  'large': $large-up,
-  'xlarge': $xlarge-up
-);
-
 @each $mod, $breakpoint in $grid-sizes {
   @for $i from 0 through $grid-columns {
     .col#{$i}--#{$mod} {

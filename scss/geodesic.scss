@@ -4,12 +4,18 @@
 @import "neat";
 
 @import "settings/breakpoints";
+@import "settings/grids";
+@import "settings/sizes";
+@import "settings/colors";
+@import "settings/typography";
+
+@import "defaults";
 
 @import "utilities/grid";
-// @import "utilities/color";
-// @import "utilities/space";
-// @import "utilities/type";
-// @import "utilities/display";
-// @import "utilities/hide";
-// @import "utilities/flex";
-// @import "utilities/media";
+@import "utilities/color";
+@import "utilities/space";
+@import "utilities/type";
+@import "utilities/display";
+@import "utilities/hide";
+@import "utilities/flex";
+@import "utilities/media";
