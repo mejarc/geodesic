@@ -1,0 +1,58 @@
+/*
+
+  SPACE
+  Defines useful spacing utilities. These are aaaaall generated based on a list
+  of steps in $space-scale. Feel free to add more, but be aware that extra steps
+  produce a lot of of rules. Be judicious.
+
+  NOTE 4/15/16: Because of how many spacing rules there are, I'm reluctant to
+  further complicate this set by adding breakpoints. In the future I may do
+  something similar to _type.scss and set up a sliding scale to minimize the
+  number of rules needed to make sane spacing happen. If you run into a problem
+  around needing different spaces at different sizes, talk to Liam.
+
+*/
+
+$space-scale: (
+  'none': 0,
+  'tiny': 0.25,
+  'small': 0.5,
+  'medium': 1,
+  'large': 2,
+  'huge': 4
+);
+
+@each $name, $multiplier in $space-scale {
+  .mar-#{$name}   { margin:        $space-unit * $multiplier }
+  .mar-t-#{$name} { margin-top:    $space-unit * $multiplier }
+  .mar-r-#{$name} { margin-right:  $space-unit * $multiplier }
+  .mar-b-#{$name} { margin-bottom: $space-unit * $multiplier }
+  .mar-l-#{$name} { margin-left:   $space-unit * $multiplier }
+  .mar-x-#{$name} {
+    margin-left: $space-unit * $multiplier;
+    margin-right: $space-unit * $multiplier;
+  }
+  .mar-y-#{$name} {
+    margin-top: $space-unit * $multiplier;
+    margin-bottom: $space-unit * $multiplier;
+  }
+
+  .pad-#{$name}   { padding:        $space-unit * $multiplier }
+  .pad-t-#{$name} { padding-top:    $space-unit * $multiplier }
+  .pad-r-#{$name} { padding-right:  $space-unit * $multiplier }
+  .pad-b-#{$name} { padding-bottom: $space-unit * $multiplier }
+  .pad-l-#{$name} { padding-left:   $space-unit * $multiplier }
+  .pad-x-#{$name} {
+    padding-left: $space-unit * $multiplier;
+    padding-right: $space-unit * $multiplier;
+  }
+  .pad-y-#{$name} {
+    padding-top: $space-unit * $multiplier;
+    padding-bottom: $space-unit * $multiplier;
+  }
+}
+
+.mar-x-auto {
+  margin-left: auto;
+  margin-right: auto;
+}

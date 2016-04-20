@@ -1,6 +1,6 @@
 {
   "name": "geodesic",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "A CSS toolkit for building big systems out of small parts",
   "main": "gulpfile.js",
   "scripts": {
@@ -10,10 +10,13 @@
     "css",
     "functional"
   ],
+  "repository": "https://github.com/muledesign/geodesic",
   "author": "Liam Campbell",
   "license": "ISC",
   "devDependencies": {
+    "bourbon-neat": "^1.7.4",
     "gulp": "^3.9.1",
+    "gulp-connect": "^3.2.2",
     "gulp-parker": "^0.1.4",
     "gulp-sass": "^2.2.0"
   }
