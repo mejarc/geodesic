@@ -1,6 +1,5 @@
-$grid-sizes: (
-  'small': $small-up,
-  'medium': $medium-up,
-  'large': $large-up,
-  'xlarge': $xlarge-up
-);
+// Neat settings
+$column: em(72.5px);
+$gutter: em(20px);
+$grid-columns: 8;
+$max-width: 720px;

@@ -19,11 +19,16 @@
 .font-huge { font-size: 40px; }
 .font-giant { font-size: 56px; }
 
+.face-text { font-family: $text-font; }
+.face-code { font-family: $code-font; }
+
 .underline { text-decoration: underline; }
-.tracked { letter-spacing: 0.1em; }
+.tracked { letter-spacing: 0.15em; }
 .uppercase { text-transform: uppercase; }
 .italic { font-style: italic; }
 
+// Depending on your fonts, you might need more or fewer of these classes
+.light { font-weight: 300; }
 .bold { font-weight: bold; }
 .heavy { font-weight: 900; }
 
