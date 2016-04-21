@@ -99,6 +99,50 @@ body {
   font-family: "Roboto", Helvetica, sans-serif;
 }
 
+.button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 0.75em;
+  border: 0;
+  cursor: pointer;
+  text-align: center;
+}
+
+/*
+
+  SPACING CONTEXTS
+  Contexts for adding space to direct descendents of elements.
+
+*/
+/*
+  INLINE SPACING
+  adds spacing between inline or inline-block elements
+*/
+.c-inline-space-small > * + * {
+  margin-left: 0.5em;
+}
+
+.c-inline-space-medium > * + * {
+  margin-left: 1em;
+}
+
+/*
+  STACK SPACING
+  adds spacing between stacking block elements
+*/
+.c-stack-space-small > * + * {
+  margin-top: 0.5em;
+}
+
+.c-stack-space-medium > * + * {
+  margin-top: 1em;
+}
+
 /*
 
   GRID
@@ -828,6 +872,22 @@ body {
   background-color: #6FA25F;
 }
 
+.color-gray {
+  color: #757986;
+}
+
+.bg-gray {
+  background-color: #757986;
+}
+
+.color-white {
+  color: #FFFFFF;
+}
+
+.bg-white {
+  background-color: #FFFFFF;
+}
+
 /*
 
   SPACE
@@ -1229,15 +1289,17 @@ body {
 }
 
 .font-large {
-  font-size: 32px;
+  font-size: 36px;
 }
 
 .font-huge {
-  font-size: 40px;
+  font-size: 42px;
 }
 
-.font-giant {
-  font-size: 56px;
+@media screen and (min-width: 768px) {
+  .font-huge {
+    font-size: 56px;
+  }
 }
 
 .face-text {

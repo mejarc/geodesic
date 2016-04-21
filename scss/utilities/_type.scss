@@ -15,9 +15,11 @@
 .font-tiny { font-size: 15px; }
 .font-small { font-size: 20px; }
 .font-medium { font-size: 24px; }
-.font-large { font-size: 32px; }
-.font-huge { font-size: 40px; }
-.font-giant { font-size: 56px; }
+.font-large { font-size: 36px; }
+.font-huge {
+  font-size: 42px;
+  @include font-scale($large-up, 56px);
+}
 
 .face-text { font-family: $text-font; }
 .face-code { font-family: $code-font; }

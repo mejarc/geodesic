@@ -13,15 +13,6 @@
 
 */
 
-$space-scale: (
-  'none': 0,
-  'tiny': 0.25,
-  'small': 0.5,
-  'medium': 1,
-  'large': 2,
-  'huge': 4
-);
-
 @each $name, $multiplier in $space-scale {
   .mar-#{$name}   { margin:        $space-unit * $multiplier }
   .mar-t-#{$name} { margin-top:    $space-unit * $multiplier }

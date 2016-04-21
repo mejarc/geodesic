@@ -1,0 +1,11 @@
+.button {
+  @include appearance(none);
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 0.75em;
+
+  border: 0; // get rid of the browser default for `<input>` and `<button>`
+  cursor: pointer;
+
+  text-align: center;
+}

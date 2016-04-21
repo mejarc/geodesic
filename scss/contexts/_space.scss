@@ -1,0 +1,40 @@
+/*
+
+  SPACING CONTEXTS
+  Contexts for adding space to direct descendents of elements.
+
+*/
+
+/*
+  INLINE SPACING
+  adds spacing between inline or inline-block elements
+*/
+
+.c-inline-space-small {
+  > * + * {
+    margin-left: 0.5em;
+  }
+}
+
+.c-inline-space-medium {
+  > * + * {
+    margin-left: 1em;
+  }
+}
+
+/*
+  STACK SPACING
+  adds spacing between stacking block elements
+*/
+
+.c-stack-space-small {
+  > * + * {
+    margin-top: 0.5em;
+  }
+}
+
+.c-stack-space-medium {
+  > * + * {
+    margin-top: 1em;
+  }
+}
