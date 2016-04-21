@@ -143,6 +143,10 @@ body {
   margin-top: 1em;
 }
 
+.c-content-spacing p:not(:first-child), .c-content-spacing ul:not(:first-child), .c-content-spacing ol:not(:first-child), .c-content-spacing blockquote:not(:first-child), .c-content-spacing figure:not(:first-child), .c-content-spacing h1:not(:first-child), .c-content-spacing h2:not(:first-child), .c-content-spacing h3:not(:first-child), .c-content-spacing h4:not(:first-child), .c-content-spacing h5:not(:first-child), .c-content-spacing h6:not(:first-child) {
+  margin-top: 1em;
+}
+
 /*
 
   GRID
@@ -1285,11 +1289,23 @@ body {
 }
 
 .font-medium {
-  font-size: 24px;
+  font-size: 23px;
+}
+
+@media screen and (min-width: 768px) {
+  .font-medium {
+    font-size: 24px;
+  }
 }
 
 .font-large {
-  font-size: 36px;
+  font-size: 28px;
+}
+
+@media screen and (min-width: 768px) {
+  .font-large {
+    font-size: 36px;
+  }
 }
 
 .font-huge {

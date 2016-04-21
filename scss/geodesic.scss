@@ -18,7 +18,10 @@
 
 // Contexts modify elements under them. Use them for spacing or to add rules to
 // bare elements in a safe, scoped way
-@import "contexts/space";
+@import "contexts/spacing";
+@import "contexts/content-style";
+@import "contexts/content-spacing";
+@import "contexts/link-style";
 
 // Utilities come last so that they can always modify objects and elements
 @import "utilities/grid";
