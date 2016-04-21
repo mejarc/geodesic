@@ -40,7 +40,10 @@ gulp.task('sass:watch', function() {
 // Display CSS statistics
 gulp.task('parker', function() {
   return gulp.src(SRC_DIR + '*.scss')
-    .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+    .pipe(sass({
+      outputStyle: 'compressed',
+      includePaths: sassIncludes
+    }).on('error', sass.logError))
     .pipe(parker());
 });
 

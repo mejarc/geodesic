@@ -1,11 +1,11 @@
 // Define site-wide breakpoints and settings for each
 
-// BREAKPOINTS
 $small-range:         0px 539px;
 $medium-range:        540px 767px;
 $large-range:         768px 1023px;
 $xlarge-range:        1024px;
 
+// Breakpoints include the total number of columns in each breakpoint's layout
 $small-only:          new-breakpoint(max-width nth($small-range, 2), $total-columns: $grid-columns/2);
 $small-up:            new-breakpoint(nth($small-range, 1), $total-columns: $grid-columns/2);
 $medium-only:         new-breakpoint(min-width nth($medium-range, 1) max-width nth($medium-range, 2), $total-columns: $grid-columns);
