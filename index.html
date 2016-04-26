@@ -20,8 +20,34 @@
     </div>
   </header>
   <main>
-    <div class="row font-small face-text line-text mar-b-huge c-content-spacing">
-      <p>Geodesic is a Sass toolkit for making large systems out of small parts. It provides lots of discrete chunks powered by configurable fiddly bits. Clone Geodesic, configure, and then start adding and deleting as you see fit. You&rsquo;ll have a complete functional CSS system in no time!</p>
+    <div class="row font-small face-text line-text mar-b-huge">
+      <p class="mar-b-huge">
+        Geodesic is a Sass toolkit for making large systems out of small parts.
+        It provides some functional classes right out the box, and gives you tools for making more chunks on your own.
+        It is intentionally incomplete&mdash;I'm not here to do your damn job for you.
+      </p>
+      <h2 class="font-large color-navy light line-solid mar-y-large">Principles</h2>
+      <h3 class="font-medium color-gray bold line-solid mar-t-large mar-b-small">Coherent > Consistent</h3>
+      <p>
+        Some people like functional classes, other people like objects.
+        Geodesic uses both, because sometimes one or the other is a more easily understood way of getting something done.
+        Trying to shoe-horn everything into a single conceptual model is a great way to make certain stuff really hard to do.
+        Instead, Geodesic has a few different concepts around which rules are organized.
+        Choose the one that will make your code easiest to use and understand.
+      </p>
+      <h3 class="font-medium color-gray bold line-solid mar-t-large mar-b-small">Descriptive > Concise</h3>
+      <p>
+        The best kind of documentation is when a component's name tells you everything you need to know about it.
+        I feel comfortable trading a few extra bytes in a class name for improved developer comprehension.
+        Code that developers don&rsquo;t understand gets duplicated in a way they do understand.
+        This is the answer to the mystery of why your stylesheets keep getting bigger.
+      </p>
+      <h3 class="font-medium color-gray bold line-solid mar-t-large mar-b-small">Discrete > Dependent</h3>
+      <p>
+        The more components rely on one another, the harder it is to make a single change to the system without unintended side effects.
+        Using smaller, more focused classes lets trade more class names for better fine-grained control of elements.
+        If you do it right, you'll have to change styles less often.
+      </p>
     </div>
     <div class="row font-small face-text line-text mar-b-huge">
       <h2 class="font-large color-navy light line-solid mar-b-large">Concepts</h2>
@@ -46,13 +72,13 @@
         <div class="col2--small col2--medium mar-b-medium pad-small bg-blue color-white align-c">
           Four column, breaking to two column
         </div>
-        <div class="col2--small col2--medium col-last--small mar-b-medium pad-small bg-blue color-white align-c">
+        <div class="col2--small col2--medium col-last--small mar-b-medium pad-small bg-green color-white align-c">
           Four column, breaking to two column
         </div>
         <div class="col2--small col2--medium mar-b-medium pad-small bg-blue color-white align-c">
           Four column, breaking to two column
         </div>
-        <div class="col2--small col2--medium col-last--medium mar-b-medium pad-small bg-blue color-white align-c">
+        <div class="col2--small col2--medium col-last--medium mar-b-medium pad-small bg-green color-white align-c">
           Four column, breaking to two column
         </div>
       </div>
