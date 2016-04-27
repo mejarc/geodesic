@@ -94,9 +94,149 @@ html {
   box-sizing: inherit;
 }
 
+/*
+  Common flex tasks in plain English, because you shouldn't have to learn what
+  "flex basis" means in order to make a web page.
+
+  First do `@include flex;`, then apply one of these rules.
+*/
 body {
   color: #3F3E4C;
   font-family: "Roboto", Helvetica, sans-serif;
+}
+
+a {
+  color: #222;
+  border-bottom: 2px solid #F8708E;
+  -webkit-transition-property: background-color color;
+  -moz-transition-property: background-color color;
+  transition-property: background-color color;
+  -webkit-transition-duration: 0.2s;
+  -moz-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -webkit-transition-timing-function: ease;
+  -moz-transition-timing-function: ease;
+  transition-timing-function: ease;
+}
+
+a:hover {
+  background-color: #feeaee;
+}
+
+/*
+
+  GRID
+  Responsive chainable grid classes, complete with subgrids. These are all
+  generated from the settings in $grids.
+
+*/
+@media screen and (min-width: 0px) {
+  .small-col-1 {
+    position: relative;
+    float: left;
+    width: 25%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .small-col-2 {
+    position: relative;
+    float: left;
+    width: 50%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .small-col-3 {
+    position: relative;
+    float: left;
+    width: 75%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .small-col-4 {
+    position: relative;
+    float: left;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media screen and (min-width: 540px) {
+  .large-col-1 {
+    position: relative;
+    float: left;
+    width: 12.5%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .large-col-2 {
+    position: relative;
+    float: left;
+    width: 25%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .large-col-3 {
+    position: relative;
+    float: left;
+    width: 37.5%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .large-col-4 {
+    position: relative;
+    float: left;
+    width: 50%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .large-col-5 {
+    position: relative;
+    float: left;
+    width: 62.5%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .large-col-6 {
+    position: relative;
+    float: left;
+    width: 75%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .large-col-7 {
+    position: relative;
+    float: left;
+    width: 87.5%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .large-col-8 {
+    position: relative;
+    float: left;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+.row {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 0px) {
+  .row {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media screen and (min-width: 540px) {
+  .row {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
 
 .button {
@@ -111,739 +251,6 @@ body {
   border: 0;
   cursor: pointer;
   text-align: center;
-}
-
-/*
-
-  SPACING CONTEXTS
-  Contexts for adding space to direct descendents of elements.
-
-*/
-/*
-  INLINE SPACING
-  adds spacing between inline or inline-block elements
-*/
-.c-inline-space-small > * + * {
-  margin-left: 0.5em;
-}
-
-.c-inline-space-medium > * + * {
-  margin-left: 1em;
-}
-
-/*
-  STACK SPACING
-  adds spacing between stacking block elements
-*/
-.c-stack-space-small > * + * {
-  margin-top: 0.5em;
-}
-
-.c-stack-space-medium > * + * {
-  margin-top: 1em;
-}
-
-.c-content-spacing p:not(:first-child), .c-content-spacing ul:not(:first-child), .c-content-spacing ol:not(:first-child), .c-content-spacing blockquote:not(:first-child), .c-content-spacing figure:not(:first-child), .c-content-spacing h1:not(:first-child), .c-content-spacing h2:not(:first-child), .c-content-spacing h3:not(:first-child), .c-content-spacing h4:not(:first-child), .c-content-spacing h5:not(:first-child), .c-content-spacing h6:not(:first-child) {
-  margin-top: 1em;
-}
-
-/*
-
-  GRID
-  Responsive chainable grid classes courtesy of Neat.
-  Settings live in neat/settings/_grid.scss and probably shouldn't be adjusted
-  too often.
-
-*/
-@media screen and (min-width: 0px) {
-  .col0--small {
-    float: left;
-    display: block;
-    margin-right: 7.42297%;
-    width: -7.42297%;
-  }
-  .col0--small:last-child {
-    margin-right: 0;
-  }
-}
-
-@media screen and (min-width: 0px) {
-  .shift0--small {
-    margin-left: 0%;
-  }
-}
-
-@media screen and (min-width: 0px) {
-  .col1--small {
-    float: left;
-    display: block;
-    margin-right: 7.42297%;
-    width: 19.43277%;
-  }
-  .col1--small:last-child {
-    margin-right: 0;
-  }
-}
-
-@media screen and (min-width: 0px) {
-  .shift1--small {
-    margin-left: 26.85574%;
-  }
-}
-
-@media screen and (min-width: 0px) {
-  .col2--small {
-    float: left;
-    display: block;
-    margin-right: 7.42297%;
-    width: 46.28851%;
-  }
-  .col2--small:last-child {
-    margin-right: 0;
-  }
-}
-
-@media screen and (min-width: 0px) {
-  .shift2--small {
-    margin-left: 53.71149%;
-  }
-}
-
-@media screen and (min-width: 0px) {
-  .col3--small {
-    float: left;
-    display: block;
-    margin-right: 7.42297%;
-    width: 73.14426%;
-  }
-  .col3--small:last-child {
-    margin-right: 0;
-  }
-}
-
-@media screen and (min-width: 0px) {
-  .shift3--small {
-    margin-left: 80.56723%;
-  }
-}
-
-@media screen and (min-width: 0px) {
-  .col4--small {
-    float: left;
-    display: block;
-    margin-right: 7.42297%;
-    width: 100%;
-  }
-  .col4--small:last-child {
-    margin-right: 0;
-  }
-}
-
-@media screen and (min-width: 0px) {
-  .shift4--small {
-    margin-left: 107.42297%;
-  }
-}
-
-@media screen and (min-width: 0px) {
-  .col5--small {
-    float: left;
-    display: block;
-    margin-right: 7.42297%;
-    width: 126.85574%;
-  }
-  .col5--small:last-child {
-    margin-right: 0;
-  }
-}
-
-@media screen and (min-width: 0px) {
-  .shift5--small {
-    margin-left: 134.27871%;
-  }
-}
-
-@media screen and (min-width: 0px) {
-  .col6--small {
-    float: left;
-    display: block;
-    margin-right: 7.42297%;
-    width: 153.71149%;
-  }
-  .col6--small:last-child {
-    margin-right: 0;
-  }
-}
-
-@media screen and (min-width: 0px) {
-  .shift6--small {
-    margin-left: 161.13446%;
-  }
-}
-
-@media screen and (min-width: 0px) {
-  .col7--small {
-    float: left;
-    display: block;
-    margin-right: 7.42297%;
-    width: 180.56723%;
-  }
-  .col7--small:last-child {
-    margin-right: 0;
-  }
-}
-
-@media screen and (min-width: 0px) {
-  .shift7--small {
-    margin-left: 187.9902%;
-  }
-}
-
-@media screen and (min-width: 0px) {
-  .col8--small {
-    float: left;
-    display: block;
-    margin-right: 7.42297%;
-    width: 207.42297%;
-  }
-  .col8--small:last-child {
-    margin-right: 0;
-  }
-}
-
-@media screen and (min-width: 0px) {
-  .shift8--small {
-    margin-left: 214.84594%;
-  }
-}
-
-@media screen and (min-width: 0px) {
-  .col-last--small {
-    margin-right: 0;
-  }
-}
-
-@media screen and (min-width: 540px) {
-  .col0--medium {
-    float: left;
-    display: block;
-    margin-right: 3.57866%;
-    width: -3.57866%;
-  }
-  .col0--medium:last-child {
-    margin-right: 0;
-  }
-}
-
-@media screen and (min-width: 540px) {
-  .shift0--medium {
-    margin-left: 0%;
-  }
-}
-
-@media screen and (min-width: 540px) {
-  .col1--medium {
-    float: left;
-    display: block;
-    margin-right: 3.57866%;
-    width: 9.36867%;
-  }
-  .col1--medium:last-child {
-    margin-right: 0;
-  }
-}
-
-@media screen and (min-width: 540px) {
-  .shift1--medium {
-    margin-left: 12.94733%;
-  }
-}
-
-@media screen and (min-width: 540px) {
-  .col2--medium {
-    float: left;
-    display: block;
-    margin-right: 3.57866%;
-    width: 22.316%;
-  }
-  .col2--medium:last-child {
-    margin-right: 0;
-  }
-}
-
-@media screen and (min-width: 540px) {
-  .shift2--medium {
-    margin-left: 25.89467%;
-  }
-}
-
-@media screen and (min-width: 540px) {
-  .col3--medium {
-    float: left;
-    display: block;
-    margin-right: 3.57866%;
-    width: 35.26334%;
-  }
-  .col3--medium:last-child {
-    margin-right: 0;
-  }
-}
-
-@media screen and (min-width: 540px) {
-  .shift3--medium {
-    margin-left: 38.842%;
-  }
-}
-
-@media screen and (min-width: 540px) {
-  .col4--medium {
-    float: left;
-    display: block;
-    margin-right: 3.57866%;
-    width: 48.21067%;
-  }
-  .col4--medium:last-child {
-    margin-right: 0;
-  }
-}
-
-@media screen and (min-width: 540px) {
-  .shift4--medium {
-    margin-left: 51.78933%;
-  }
-}
-
-@media screen and (min-width: 540px) {
-  .col5--medium {
-    float: left;
-    display: block;
-    margin-right: 3.57866%;
-    width: 61.158%;
-  }
-  .col5--medium:last-child {
-    margin-right: 0;
-  }
-}
-
-@media screen and (min-width: 540px) {
-  .shift5--medium {
-    margin-left: 64.73666%;
-  }
-}
-
-@media screen and (min-width: 540px) {
-  .col6--medium {
-    float: left;
-    display: block;
-    margin-right: 3.57866%;
-    width: 74.10533%;
-  }
-  .col6--medium:last-child {
-    margin-right: 0;
-  }
-}
-
-@media screen and (min-width: 540px) {
-  .shift6--medium {
-    margin-left: 77.684%;
-  }
-}
-
-@media screen and (min-width: 540px) {
-  .col7--medium {
-    float: left;
-    display: block;
-    margin-right: 3.57866%;
-    width: 87.05267%;
-  }
-  .col7--medium:last-child {
-    margin-right: 0;
-  }
-}
-
-@media screen and (min-width: 540px) {
-  .shift7--medium {
-    margin-left: 90.63133%;
-  }
-}
-
-@media screen and (min-width: 540px) {
-  .col8--medium {
-    float: left;
-    display: block;
-    margin-right: 3.57866%;
-    width: 100%;
-  }
-  .col8--medium:last-child {
-    margin-right: 0;
-  }
-}
-
-@media screen and (min-width: 540px) {
-  .shift8--medium {
-    margin-left: 103.57866%;
-  }
-}
-
-@media screen and (min-width: 540px) {
-  .col-last--medium {
-    margin-right: 0;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .col0--large {
-    float: left;
-    display: block;
-    margin-right: 3.57866%;
-    width: -3.57866%;
-  }
-  .col0--large:last-child {
-    margin-right: 0;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .shift0--large {
-    margin-left: 0%;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .col1--large {
-    float: left;
-    display: block;
-    margin-right: 3.57866%;
-    width: 9.36867%;
-  }
-  .col1--large:last-child {
-    margin-right: 0;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .shift1--large {
-    margin-left: 12.94733%;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .col2--large {
-    float: left;
-    display: block;
-    margin-right: 3.57866%;
-    width: 22.316%;
-  }
-  .col2--large:last-child {
-    margin-right: 0;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .shift2--large {
-    margin-left: 25.89467%;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .col3--large {
-    float: left;
-    display: block;
-    margin-right: 3.57866%;
-    width: 35.26334%;
-  }
-  .col3--large:last-child {
-    margin-right: 0;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .shift3--large {
-    margin-left: 38.842%;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .col4--large {
-    float: left;
-    display: block;
-    margin-right: 3.57866%;
-    width: 48.21067%;
-  }
-  .col4--large:last-child {
-    margin-right: 0;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .shift4--large {
-    margin-left: 51.78933%;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .col5--large {
-    float: left;
-    display: block;
-    margin-right: 3.57866%;
-    width: 61.158%;
-  }
-  .col5--large:last-child {
-    margin-right: 0;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .shift5--large {
-    margin-left: 64.73666%;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .col6--large {
-    float: left;
-    display: block;
-    margin-right: 3.57866%;
-    width: 74.10533%;
-  }
-  .col6--large:last-child {
-    margin-right: 0;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .shift6--large {
-    margin-left: 77.684%;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .col7--large {
-    float: left;
-    display: block;
-    margin-right: 3.57866%;
-    width: 87.05267%;
-  }
-  .col7--large:last-child {
-    margin-right: 0;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .shift7--large {
-    margin-left: 90.63133%;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .col8--large {
-    float: left;
-    display: block;
-    margin-right: 3.57866%;
-    width: 100%;
-  }
-  .col8--large:last-child {
-    margin-right: 0;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .shift8--large {
-    margin-left: 103.57866%;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .col-last--large {
-    margin-right: 0;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .col0--xlarge {
-    float: left;
-    display: block;
-    margin-right: 3.57866%;
-    width: -3.57866%;
-  }
-  .col0--xlarge:last-child {
-    margin-right: 0;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .shift0--xlarge {
-    margin-left: 0%;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .col1--xlarge {
-    float: left;
-    display: block;
-    margin-right: 3.57866%;
-    width: 9.36867%;
-  }
-  .col1--xlarge:last-child {
-    margin-right: 0;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .shift1--xlarge {
-    margin-left: 12.94733%;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .col2--xlarge {
-    float: left;
-    display: block;
-    margin-right: 3.57866%;
-    width: 22.316%;
-  }
-  .col2--xlarge:last-child {
-    margin-right: 0;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .shift2--xlarge {
-    margin-left: 25.89467%;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .col3--xlarge {
-    float: left;
-    display: block;
-    margin-right: 3.57866%;
-    width: 35.26334%;
-  }
-  .col3--xlarge:last-child {
-    margin-right: 0;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .shift3--xlarge {
-    margin-left: 38.842%;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .col4--xlarge {
-    float: left;
-    display: block;
-    margin-right: 3.57866%;
-    width: 48.21067%;
-  }
-  .col4--xlarge:last-child {
-    margin-right: 0;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .shift4--xlarge {
-    margin-left: 51.78933%;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .col5--xlarge {
-    float: left;
-    display: block;
-    margin-right: 3.57866%;
-    width: 61.158%;
-  }
-  .col5--xlarge:last-child {
-    margin-right: 0;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .shift5--xlarge {
-    margin-left: 64.73666%;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .col6--xlarge {
-    float: left;
-    display: block;
-    margin-right: 3.57866%;
-    width: 74.10533%;
-  }
-  .col6--xlarge:last-child {
-    margin-right: 0;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .shift6--xlarge {
-    margin-left: 77.684%;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .col7--xlarge {
-    float: left;
-    display: block;
-    margin-right: 3.57866%;
-    width: 87.05267%;
-  }
-  .col7--xlarge:last-child {
-    margin-right: 0;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .shift7--xlarge {
-    margin-left: 90.63133%;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .col8--xlarge {
-    float: left;
-    display: block;
-    margin-right: 3.57866%;
-    width: 100%;
-  }
-  .col8--xlarge:last-child {
-    margin-right: 0;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .shift8--xlarge {
-    margin-left: 103.57866%;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .col-last--xlarge {
-    margin-right: 0;
-  }
-}
-
-.row {
-  max-width: 720px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 4.82916%;
-}
-
-.row::after {
-  clear: both;
-  content: "";
-  display: table;
-}
-
-@media screen and (min-width: 540px) {
-  .row {
-    padding: 0 2.35765%;
-  }
 }
 
 /*
@@ -876,12 +283,28 @@ body {
   background-color: #7FC28F;
 }
 
+.color-pink {
+  color: #F8708E;
+}
+
+.bg-pink {
+  background-color: #F8708E;
+}
+
 .color-gray {
   color: #757986;
 }
 
 .bg-gray {
   background-color: #757986;
+}
+
+.color-offblack {
+  color: #222;
+}
+
+.bg-offblack {
+  background-color: #222;
 }
 
 .color-white {
@@ -1594,216 +1017,6 @@ body {
   .gone--xlarge {
     display: none;
   }
-}
-
-/*
-
-  FLEXBOX
-  There's a lot of rules, but these are pretty damn useful so I don't feel bad
-  about it. Not all of them are breakpoint-scoped, because that takes a lot of
-  file size per rule.
-
-  For best results, keep this open in a tab while flexing:
-  https://css-tricks.com/snippets/css/a-guide-to-flexbox/
-
-  There is a strict ban on making Rae Sremmurd jokes when using flexbox.
-
-*/
-.flex {
-  display: flex;
-}
-
-.flex-row {
-  flex-direction: row;
-}
-
-.flex-reverse {
-  flex-direction: row-reverse;
-}
-
-.flex-column {
-  flex-direction: column;
-}
-
-@media screen and (min-width: 0px) {
-  .flex--small {
-    display: flex;
-  }
-  .flex-row--small {
-    flex-direction: row;
-  }
-  .flex-reverse--small {
-    flex-direction: row-reverse;
-  }
-  .flex-column--small {
-    flex-direction: column;
-  }
-}
-
-@media screen and (min-width: 540px) {
-  .flex--medium {
-    display: flex;
-  }
-  .flex-row--medium {
-    flex-direction: row;
-  }
-  .flex-reverse--medium {
-    flex-direction: row-reverse;
-  }
-  .flex-column--medium {
-    flex-direction: column;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .flex--large {
-    display: flex;
-  }
-  .flex-row--large {
-    flex-direction: row;
-  }
-  .flex-reverse--large {
-    flex-direction: row-reverse;
-  }
-  .flex-column--large {
-    flex-direction: column;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .flex--xlarge {
-    display: flex;
-  }
-  .flex-row--xlarge {
-    flex-direction: row;
-  }
-  .flex-reverse--xlarge {
-    flex-direction: row-reverse;
-  }
-  .flex-column--xlarge {
-    flex-direction: column;
-  }
-}
-
-.flex-wrap {
-  flex-wrap: wrap;
-}
-
-.items-start {
-  align-items: flex-start;
-}
-
-.items-end {
-  align-items: flex-end;
-}
-
-.items-center {
-  align-items: center;
-}
-
-.items-baseline {
-  align-items: baseline;
-}
-
-.items-stretch {
-  align-items: stretch;
-}
-
-.self-start {
-  align-self: flex-start;
-}
-
-.self-end {
-  align-self: flex-end;
-}
-
-.self-center {
-  align-self: center;
-}
-
-.self-baseline {
-  align-self: baseline;
-}
-
-.self-stretch {
-  align-self: stretch;
-}
-
-.justify-start {
-  justify-content: flex-start;
-}
-
-.justify-end {
-  justify-content: flex-end;
-}
-
-.justify-center {
-  justify-content: center;
-}
-
-.justify-between {
-  justify-content: space-between;
-}
-
-.justify-around {
-  justify-content: space-around;
-}
-
-.content-start {
-  align-content: flex-start;
-}
-
-.content-end {
-  align-content: flex-end;
-}
-
-.content-center {
-  align-content: center;
-}
-
-.content-between {
-  align-content: space-between;
-}
-
-.content-around {
-  align-content: space-around;
-}
-
-.content-stretch {
-  align-content: stretch;
-}
-
-/* 1. Fix for Chrome 44 bug. https://code.google.com/p/chromium/issues/detail?id=506893 */
-.flex-auto {
-  flex: 1 1 auto;
-  min-width: 0;
-  /* 1 */
-  min-height: 0;
-  /* 1 */
-}
-
-.flex-none {
-  flex: none;
-}
-
-.order-0 {
-  order: 0;
-}
-
-.order-1 {
-  order: 1;
-}
-
-.order-2 {
-  order: 2;
-}
-
-.order-3 {
-  order: 3;
-}
-
-.order-last {
-  order: 99999;
 }
 
 /*

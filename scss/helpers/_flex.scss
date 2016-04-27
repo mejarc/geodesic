@@ -1,0 +1,26 @@
+/*
+  Common flex tasks in plain English, because you shouldn't have to learn what
+  "flex basis" means in order to make a web page.
+
+  First do `@include flex;`, then apply one of these rules.
+*/
+
+@mixin wrap-children-normally {
+  @include flex-wrap(wrap);
+}
+
+@mixin make-children-equal-height {
+  @include align-items(stretch);
+}
+
+@mixin vertically-center-children {
+  @include align-items(center);
+}
+
+@mixin space-children-equally {
+  @include justify-content(space-around);
+}
+
+@mixin space-children-equally-to-edge {
+  @include justify-content(space-between);
+}

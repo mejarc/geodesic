@@ -6,12 +6,12 @@ $large-range:         768px 1023px;
 $xlarge-range:        1024px;
 
 // Breakpoints include the total number of columns in each breakpoint's layout
-$small-only:          new-breakpoint(max-width nth($small-range, 2), $total-columns: $grid-columns/2);
-$small-up:            new-breakpoint(nth($small-range, 1), $total-columns: $grid-columns/2);
-$medium-only:         new-breakpoint(min-width nth($medium-range, 1) max-width nth($medium-range, 2), $total-columns: $grid-columns);
-$medium-up:           new-breakpoint(nth($medium-range, 1), $total-columns: $grid-columns);
-$up-to-large:         new-breakpoint(max-width nth($medium-range, 2), $total-columns: $grid-columns);
-$large-only:          new-breakpoint(min-width nth($large-range, 1) max-width nth($large-range, 2), $total-columns: $grid-columns);
-$large-up:            new-breakpoint(nth($large-range, 1), $total-columns: $grid-columns);
-$up-to-xlarge:        new-breakpoint(max-width nth($large-range, 2), $total-columns: $grid-columns);
-$xlarge-up:           new-breakpoint(nth($xlarge-range, 1), $total-columns: $grid-columns);
+$small-only:          max-width nth($small-range, 2);
+$small-up:            min-width nth($small-range, 1);
+$medium-only:         min-width nth($medium-range, 1) max-width nth($medium-range, 2);
+$medium-up:           min-width nth($medium-range, 1);
+$up-to-large:         max-width nth($medium-range, 2);
+$large-only:          min-width nth($large-range, 1) max-width nth($large-range, 2);
+$large-up:            min-width nth($large-range, 1);
+$up-to-xlarge:        max-width nth($large-range, 2);
+$xlarge-up:           min-width nth($xlarge-range, 1);

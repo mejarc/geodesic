@@ -2,3 +2,16 @@ body {
   color: get-color('navy');
   font-family: $text-font;
 }
+
+a {
+  color: get-color('offblack');
+  border-bottom: 2px solid get-color('pink');
+
+  @include transition-property(background-color color);
+  @include transition-duration(0.2s);
+  @include transition-timing-function(ease);
+
+  &:hover {
+    background-color: lighten(get-color('pink'), 25%);
+  }
+}

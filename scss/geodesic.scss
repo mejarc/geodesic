@@ -1,11 +1,14 @@
 @import "nuthin"; // Reset
 
-@import "bourbon";
+@import "bourbon"; // Useful mixins and stuff
 @import "neat";
 
+// Helpers provide useful mixins and functions to make class composition easier
+@import "helpers/flex";
+
 // Settings come first, to set up the system according to some basic parameters
-@import "settings/grids";
 @import "settings/breakpoints";
+@import "settings/grid";
 @import "settings/sizes";
 @import "settings/colors";
 @import "settings/typography";
@@ -13,22 +16,18 @@
 // Then we set some defaults, before any of the classy magic starts
 @import "defaults";
 
-// Objects are re-usable interface patterns
-@import "objects/buttons";
-
 // Contexts modify elements under them. Use them for spacing or to add rules to
 // bare elements in a safe, scoped way
-@import "contexts/spacing";
 @import "contexts/content-style";
-@import "contexts/content-spacing";
-@import "contexts/link-style";
+
+// Objects are re-usable interface patterns
+@import "objects/grid";
+@import "objects/buttons";
 
 // Utilities come last so that they can always modify objects and elements
-@import "utilities/grid";
 @import "utilities/color";
 @import "utilities/space";
 @import "utilities/type";
 @import "utilities/display";
 @import "utilities/hide";
-@import "utilities/flex";
 @import "utilities/media";

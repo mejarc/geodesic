@@ -1,0 +1,54 @@
+/*
+
+  GRID
+  Responsive chainable grid classes, complete with subgrids. These are all
+  generated from the settings in $grids.
+
+*/
+
+@each $grid-name, $grid-settings in $grid-breakpoints {
+  $query: map-get($grid-settings, query);
+  $columns: map-get($grid-settings, columns);
+  $gutter: map-get($grid-settings, gutter);
+  $sub-grids: map-get($grid-settings, sub-grids);
+
+  @include media($query) {
+    @for $i from 1 through $columns {
+      .#{$grid-name}-col-#{$i} {
+        position: relative;
+        float: left;
+        width: percentage($i / $columns);
+        padding-left: $gutter / 2;
+        padding-right: $gutter / 2;
+      }
+
+      .#{$grid-name}-push-#{$i} {
+
+      }
+
+      .#{$grid-name}-pull-#{$i} {
+
+      }
+
+      .#{$grid-name}-offset-#{$i} {
+
+      }
+    }
+  }
+}
+
+// Columns go in rows to set up the proper max width and for clearfixing
+.row {
+  max-width: $max-width;
+  margin: 0 auto;
+
+  @each $grid-name, $grid-settings in $grid-breakpoints {
+    $query: map-get($grid-settings, query);
+    $gutter: map-get($grid-settings, gutter);
+
+    @include media($query) {
+      padding-left: $gutter / 2;
+      padding-right: $gutter / 2;
+    }
+  }
+}

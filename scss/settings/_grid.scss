@@ -1,0 +1,18 @@
+// List of grid breakpoints and grid settings
+
+$max-width: 720px;
+
+$grid-breakpoints: (
+  small: (
+    query: $small-up,
+    columns: 4,
+    gutter: 20px,
+    sub-grids: 3
+  ),
+  large: (
+    query: $medium-up,
+    columns: 8,
+    gutter: 20px,
+    sub-grids: 4 6
+  )
+);
