@@ -130,110 +130,199 @@ a:hover {
   generated from the settings in $grids.
 
 */
+.grid-col {
+  position: relative;
+  float: left;
+}
+
 @media screen and (min-width: 0px) {
-  .small-col-1 {
-    position: relative;
-    float: left;
+  .small-1 {
     width: 25%;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 12.5px;
+    padding-right: 12.5px;
   }
-  .small-col-2 {
-    position: relative;
-    float: left;
+  .small-push-1 {
+    left: 25%;
+  }
+  .small-pull-1 {
+    left: -25%;
+  }
+  .small-offset-1 {
+    margin-left: 25%;
+  }
+  .small-2 {
     width: 50%;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 12.5px;
+    padding-right: 12.5px;
   }
-  .small-col-3 {
-    position: relative;
-    float: left;
+  .small-push-2 {
+    left: 50%;
+  }
+  .small-pull-2 {
+    left: -50%;
+  }
+  .small-offset-2 {
+    margin-left: 50%;
+  }
+  .small-3 {
     width: 75%;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 12.5px;
+    padding-right: 12.5px;
   }
-  .small-col-4 {
-    position: relative;
-    float: left;
+  .small-push-3 {
+    left: 75%;
+  }
+  .small-pull-3 {
+    left: -75%;
+  }
+  .small-offset-3 {
+    margin-left: 75%;
+  }
+  .small-4 {
     width: 100%;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 12.5px;
+    padding-right: 12.5px;
+  }
+  .small-push-4 {
+    left: 100%;
+  }
+  .small-pull-4 {
+    left: -100%;
+  }
+  .small-offset-4 {
+    margin-left: 100%;
   }
 }
 
 @media screen and (min-width: 540px) {
-  .large-col-1 {
-    position: relative;
-    float: left;
+  .large-1 {
     width: 12.5%;
     padding-left: 10px;
     padding-right: 10px;
   }
-  .large-col-2 {
-    position: relative;
-    float: left;
+  .large-push-1 {
+    left: 12.5%;
+  }
+  .large-pull-1 {
+    left: -12.5%;
+  }
+  .large-offset-1 {
+    margin-left: 12.5%;
+  }
+  .large-2 {
     width: 25%;
     padding-left: 10px;
     padding-right: 10px;
   }
-  .large-col-3 {
-    position: relative;
-    float: left;
+  .large-push-2 {
+    left: 25%;
+  }
+  .large-pull-2 {
+    left: -25%;
+  }
+  .large-offset-2 {
+    margin-left: 25%;
+  }
+  .large-3 {
     width: 37.5%;
     padding-left: 10px;
     padding-right: 10px;
   }
-  .large-col-4 {
-    position: relative;
-    float: left;
+  .large-push-3 {
+    left: 37.5%;
+  }
+  .large-pull-3 {
+    left: -37.5%;
+  }
+  .large-offset-3 {
+    margin-left: 37.5%;
+  }
+  .large-4 {
     width: 50%;
     padding-left: 10px;
     padding-right: 10px;
   }
-  .large-col-5 {
-    position: relative;
-    float: left;
+  .large-push-4 {
+    left: 50%;
+  }
+  .large-pull-4 {
+    left: -50%;
+  }
+  .large-offset-4 {
+    margin-left: 50%;
+  }
+  .large-5 {
     width: 62.5%;
     padding-left: 10px;
     padding-right: 10px;
   }
-  .large-col-6 {
-    position: relative;
-    float: left;
+  .large-push-5 {
+    left: 62.5%;
+  }
+  .large-pull-5 {
+    left: -62.5%;
+  }
+  .large-offset-5 {
+    margin-left: 62.5%;
+  }
+  .large-6 {
     width: 75%;
     padding-left: 10px;
     padding-right: 10px;
   }
-  .large-col-7 {
-    position: relative;
-    float: left;
+  .large-push-6 {
+    left: 75%;
+  }
+  .large-pull-6 {
+    left: -75%;
+  }
+  .large-offset-6 {
+    margin-left: 75%;
+  }
+  .large-7 {
     width: 87.5%;
     padding-left: 10px;
     padding-right: 10px;
   }
-  .large-col-8 {
-    position: relative;
-    float: left;
+  .large-push-7 {
+    left: 87.5%;
+  }
+  .large-pull-7 {
+    left: -87.5%;
+  }
+  .large-offset-7 {
+    margin-left: 87.5%;
+  }
+  .large-8 {
     width: 100%;
     padding-left: 10px;
     padding-right: 10px;
   }
+  .large-push-8 {
+    left: 100%;
+  }
+  .large-pull-8 {
+    left: -100%;
+  }
+  .large-offset-8 {
+    margin-left: 100%;
+  }
 }
 
-.row {
+.grid-row {
   max-width: 720px;
   margin: 0 auto;
 }
 
 @media screen and (min-width: 0px) {
-  .row {
-    padding-left: 10px;
-    padding-right: 10px;
+  .grid-row {
+    padding-left: 12.5px;
+    padding-right: 12.5px;
   }
 }
 
 @media screen and (min-width: 540px) {
-  .row {
+  .grid-row {
     padding-left: 10px;
     padding-right: 10px;
   }

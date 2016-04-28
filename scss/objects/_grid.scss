@@ -6,6 +6,11 @@
 
 */
 
+.grid-col {
+  position: relative;
+  float: left;
+}
+
 @each $grid-name, $grid-settings in $grid-breakpoints {
   $query: map-get($grid-settings, query);
   $columns: map-get($grid-settings, columns);
@@ -14,31 +19,29 @@
 
   @include media($query) {
     @for $i from 1 through $columns {
-      .#{$grid-name}-col-#{$i} {
-        position: relative;
-        float: left;
+      .#{$grid-name}-#{$i} {
         width: percentage($i / $columns);
         padding-left: $gutter / 2;
         padding-right: $gutter / 2;
       }
 
       .#{$grid-name}-push-#{$i} {
-
+        left: percentage($i / $columns);
       }
 
       .#{$grid-name}-pull-#{$i} {
-
+        left: -(percentage($i / $columns));
       }
 
       .#{$grid-name}-offset-#{$i} {
-
+        margin-left: percentage($i / $columns);
       }
     }
   }
 }
 
 // Columns go in rows to set up the proper max width and for clearfixing
-.row {
+.grid-row {
   max-width: $max-width;
   margin: 0 auto;
 
