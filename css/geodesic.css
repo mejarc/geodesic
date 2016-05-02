@@ -95,10 +95,51 @@ html {
 }
 
 /*
-  Common flex tasks in plain English, because you shouldn't have to learn what
-  "flex basis" means in order to make a web page.
+  FLEX HELPERS
 
-  First do `@include flex;`, then apply one of these rules.
+  Common flex tasks in plain English, because you shouldn't have to learn what
+  "flex basis" means in order to make a web page. *I* don't even know what it
+  means.
+
+  First do `@include flex;`, then apply one of these rules to your object class.
+*/
+/*
+  MATH HELPERS
+
+  Useful math for making scales of values that stay in line when the unit
+  changes. Stay consistent (when it makes sense)!
+
+  Thanks to Dropbox's Scooter for this idea + file.
+  https://github.com/dropbox/scooter/blob/master/scss/functions/_maths.scss
+*/
+/*
+  BREAKPOINT SETTINGS
+
+  These variables set up media queries that you can use throughout the system.
+  Use a breakpoint variable inside the `media` mixin to apply rules within a
+  media query. Like so:
+
+  ```
+  @include media($small-up) {
+    web-design: is-fun;
+  }
+  ```
+*/
+/*
+  GRID SETTINGS
+  List of grids with their individual breakpoints, values, and sub-grids. Grid
+  classes are generated from these settings in objects/_grid.scss
+*/
+/*
+  COLOR SETTINGS
+
+  Map of colors to generate classes, and a function to return a color based
+  on name for manually-written classes.
+*/
+/*
+  TYPOGRAPHY RULES
+
+  Font stacks, pervasive typo settings of all kinds.
 */
 body {
   color: #3F3E4C;
@@ -124,19 +165,14 @@ a:hover {
 }
 
 /*
-
   GRID
   Responsive chainable grid classes, complete with subgrids. These are all
-  generated from the settings in $grids.
-
+  generated from the settings in $grids-breakpoints.
 */
-.grid-col {
-  position: relative;
-  float: left;
-}
-
 @media screen and (min-width: 0px) {
   .small-1 {
+    position: relative;
+    float: left;
     width: 25%;
     padding-left: 12.5px;
     padding-right: 12.5px;
@@ -151,6 +187,8 @@ a:hover {
     margin-left: 25%;
   }
   .small-2 {
+    position: relative;
+    float: left;
     width: 50%;
     padding-left: 12.5px;
     padding-right: 12.5px;
@@ -165,6 +203,8 @@ a:hover {
     margin-left: 50%;
   }
   .small-3 {
+    position: relative;
+    float: left;
     width: 75%;
     padding-left: 12.5px;
     padding-right: 12.5px;
@@ -179,6 +219,8 @@ a:hover {
     margin-left: 75%;
   }
   .small-4 {
+    position: relative;
+    float: left;
     width: 100%;
     padding-left: 12.5px;
     padding-right: 12.5px;
@@ -196,6 +238,8 @@ a:hover {
 
 @media screen and (min-width: 540px) {
   .large-1 {
+    position: relative;
+    float: left;
     width: 12.5%;
     padding-left: 10px;
     padding-right: 10px;
@@ -210,6 +254,8 @@ a:hover {
     margin-left: 12.5%;
   }
   .large-2 {
+    position: relative;
+    float: left;
     width: 25%;
     padding-left: 10px;
     padding-right: 10px;
@@ -224,6 +270,8 @@ a:hover {
     margin-left: 25%;
   }
   .large-3 {
+    position: relative;
+    float: left;
     width: 37.5%;
     padding-left: 10px;
     padding-right: 10px;
@@ -238,6 +286,8 @@ a:hover {
     margin-left: 37.5%;
   }
   .large-4 {
+    position: relative;
+    float: left;
     width: 50%;
     padding-left: 10px;
     padding-right: 10px;
@@ -252,6 +302,8 @@ a:hover {
     margin-left: 50%;
   }
   .large-5 {
+    position: relative;
+    float: left;
     width: 62.5%;
     padding-left: 10px;
     padding-right: 10px;
@@ -266,6 +318,8 @@ a:hover {
     margin-left: 62.5%;
   }
   .large-6 {
+    position: relative;
+    float: left;
     width: 75%;
     padding-left: 10px;
     padding-right: 10px;
@@ -280,6 +334,8 @@ a:hover {
     margin-left: 75%;
   }
   .large-7 {
+    position: relative;
+    float: left;
     width: 87.5%;
     padding-left: 10px;
     padding-right: 10px;
@@ -294,6 +350,8 @@ a:hover {
     margin-left: 87.5%;
   }
   .large-8 {
+    position: relative;
+    float: left;
     width: 100%;
     padding-left: 10px;
     padding-right: 10px;
@@ -343,10 +401,7 @@ a:hover {
 }
 
 /*
-
   COLORS
-  These come from the $colors list in _variables.scss
-
 */
 .color-blue {
   color: #6899C6;
@@ -405,377 +460,369 @@ a:hover {
 }
 
 /*
-
   SPACE
-  Defines useful spacing utilities. These are aaaaall generated based on a list
-  of steps in $space-scale. Feel free to add more, but be aware that extra steps
-  produce a lot of of rules. Be judicious.
 
-  NOTE 4/15/16: Because of how many spacing rules there are, I'm reluctant to
-  further complicate this set by adding breakpoints. In the future I may do
-  something similar to _type.scss and set up a sliding scale to minimize the
-  number of rules needed to make sane spacing happen. If you run into a problem
-  around needing different spaces at different sizes, talk to Liam.
-
+  Define spacing utility classes! I'm keeping some settings here because they're
+  only used here and they make more sense in context.
 */
-.mar-none {
-  margin: 0px;
+.mar-zero {
+  margin: 0;
 }
 
-.mar-t-none {
-  margin-top: 0px;
-}
-
-.mar-r-none {
-  margin-right: 0px;
-}
-
-.mar-b-none {
-  margin-bottom: 0px;
-}
-
-.mar-l-none {
-  margin-left: 0px;
-}
-
-.mar-x-none {
-  margin-left: 0px;
-  margin-right: 0px;
-}
-
-.mar-y-none {
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
-
-.pad-none {
-  padding: 0px;
-}
-
-.pad-t-none {
-  padding-top: 0px;
-}
-
-.pad-r-none {
-  padding-right: 0px;
-}
-
-.pad-b-none {
-  padding-bottom: 0px;
-}
-
-.pad-l-none {
-  padding-left: 0px;
-}
-
-.pad-x-none {
-  padding-left: 0px;
-  padding-right: 0px;
-}
-
-.pad-y-none {
-  padding-top: 0px;
-  padding-bottom: 0px;
-}
-
-.mar-tiny {
+.mar-quarter {
   margin: 5px;
 }
 
-.mar-t-tiny {
-  margin-top: 5px;
-}
-
-.mar-r-tiny {
-  margin-right: 5px;
-}
-
-.mar-b-tiny {
-  margin-bottom: 5px;
-}
-
-.mar-l-tiny {
-  margin-left: 5px;
-}
-
-.mar-x-tiny {
-  margin-left: 5px;
-  margin-right: 5px;
-}
-
-.mar-y-tiny {
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
-.pad-tiny {
-  padding: 5px;
-}
-
-.pad-t-tiny {
-  padding-top: 5px;
-}
-
-.pad-r-tiny {
-  padding-right: 5px;
-}
-
-.pad-b-tiny {
-  padding-bottom: 5px;
-}
-
-.pad-l-tiny {
-  padding-left: 5px;
-}
-
-.pad-x-tiny {
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-.pad-y-tiny {
-  padding-top: 5px;
-  padding-bottom: 5px;
-}
-
-.mar-small {
+.mar-half {
   margin: 10px;
 }
 
-.mar-t-small {
-  margin-top: 10px;
-}
-
-.mar-r-small {
-  margin-right: 10px;
-}
-
-.mar-b-small {
-  margin-bottom: 10px;
-}
-
-.mar-l-small {
-  margin-left: 10px;
-}
-
-.mar-x-small {
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
-.mar-y-small {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.pad-small {
-  padding: 10px;
-}
-
-.pad-t-small {
-  padding-top: 10px;
-}
-
-.pad-r-small {
-  padding-right: 10px;
-}
-
-.pad-b-small {
-  padding-bottom: 10px;
-}
-
-.pad-l-small {
-  padding-left: 10px;
-}
-
-.pad-x-small {
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-.pad-y-small {
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-.mar-medium {
+.mar-one {
   margin: 20px;
 }
 
-.mar-t-medium {
-  margin-top: 20px;
-}
-
-.mar-r-medium {
-  margin-right: 20px;
-}
-
-.mar-b-medium {
-  margin-bottom: 20px;
-}
-
-.mar-l-medium {
-  margin-left: 20px;
-}
-
-.mar-x-medium {
-  margin-left: 20px;
-  margin-right: 20px;
-}
-
-.mar-y-medium {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.pad-medium {
-  padding: 20px;
-}
-
-.pad-t-medium {
-  padding-top: 20px;
-}
-
-.pad-r-medium {
-  padding-right: 20px;
-}
-
-.pad-b-medium {
-  padding-bottom: 20px;
-}
-
-.pad-l-medium {
-  padding-left: 20px;
-}
-
-.pad-x-medium {
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.pad-y-medium {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-.mar-large {
+.mar-double {
   margin: 40px;
 }
 
-.mar-t-large {
-  margin-top: 40px;
-}
-
-.mar-r-large {
-  margin-right: 40px;
-}
-
-.mar-b-large {
-  margin-bottom: 40px;
-}
-
-.mar-l-large {
-  margin-left: 40px;
-}
-
-.mar-x-large {
-  margin-left: 40px;
-  margin-right: 40px;
-}
-
-.mar-y-large {
-  margin-top: 40px;
-  margin-bottom: 40px;
-}
-
-.pad-large {
-  padding: 40px;
-}
-
-.pad-t-large {
-  padding-top: 40px;
-}
-
-.pad-r-large {
-  padding-right: 40px;
-}
-
-.pad-b-large {
-  padding-bottom: 40px;
-}
-
-.pad-l-large {
-  padding-left: 40px;
-}
-
-.pad-x-large {
-  padding-left: 40px;
-  padding-right: 40px;
-}
-
-.pad-y-large {
-  padding-top: 40px;
-  padding-bottom: 40px;
-}
-
-.mar-huge {
+.mar-quad {
   margin: 80px;
 }
 
-.mar-t-huge {
-  margin-top: 80px;
+@media screen and (min-width: 0px) {
+  .mar-gutter {
+    margin: 25px;
+  }
 }
 
-.mar-r-huge {
-  margin-right: 80px;
+@media screen and (min-width: 540px) {
+  .mar-gutter {
+    margin: 20px;
+  }
 }
 
-.mar-b-huge {
-  margin-bottom: 80px;
+.pad-zero {
+  padding: 0;
 }
 
-.mar-l-huge {
-  margin-left: 80px;
+.pad-quarter {
+  padding: 5px;
 }
 
-.mar-x-huge {
-  margin-left: 80px;
-  margin-right: 80px;
+.pad-half {
+  padding: 10px;
 }
 
-.mar-y-huge {
-  margin-top: 80px;
-  margin-bottom: 80px;
+.pad-one {
+  padding: 20px;
 }
 
-.pad-huge {
+.pad-double {
+  padding: 40px;
+}
+
+.pad-quad {
   padding: 80px;
 }
 
-.pad-t-huge {
+@media screen and (min-width: 0px) {
+  .pad-gutter {
+    padding: 25px;
+  }
+}
+
+@media screen and (min-width: 540px) {
+  .pad-gutter {
+    padding: 20px;
+  }
+}
+
+.mar-t-zero {
+  margin-top: 0;
+}
+
+.mar-t-quarter {
+  margin-top: 5px;
+}
+
+.mar-t-half {
+  margin-top: 10px;
+}
+
+.mar-t-one {
+  margin-top: 20px;
+}
+
+.mar-t-double {
+  margin-top: 40px;
+}
+
+.mar-t-quad {
+  margin-top: 80px;
+}
+
+@media screen and (min-width: 0px) {
+  .mar-t-gutter {
+    margin-top: 25px;
+  }
+}
+
+@media screen and (min-width: 540px) {
+  .mar-t-gutter {
+    margin-top: 20px;
+  }
+}
+
+.pad-t-zero {
+  padding-top: 0;
+}
+
+.pad-t-quarter {
+  padding-top: 5px;
+}
+
+.pad-t-half {
+  padding-top: 10px;
+}
+
+.pad-t-one {
+  padding-top: 20px;
+}
+
+.pad-t-double {
+  padding-top: 40px;
+}
+
+.pad-t-quad {
   padding-top: 80px;
 }
 
-.pad-r-huge {
-  padding-right: 80px;
+@media screen and (min-width: 0px) {
+  .pad-t-gutter {
+    padding-top: 25px;
+  }
 }
 
-.pad-b-huge {
+@media screen and (min-width: 540px) {
+  .pad-t-gutter {
+    padding-top: 20px;
+  }
+}
+
+.mar-b-zero {
+  margin-bottom: 0;
+}
+
+.mar-b-quarter {
+  margin-bottom: 5px;
+}
+
+.mar-b-half {
+  margin-bottom: 10px;
+}
+
+.mar-b-one {
+  margin-bottom: 20px;
+}
+
+.mar-b-double {
+  margin-bottom: 40px;
+}
+
+.mar-b-quad {
+  margin-bottom: 80px;
+}
+
+@media screen and (min-width: 0px) {
+  .mar-b-gutter {
+    margin-bottom: 25px;
+  }
+}
+
+@media screen and (min-width: 540px) {
+  .mar-b-gutter {
+    margin-bottom: 20px;
+  }
+}
+
+.pad-b-zero {
+  padding-bottom: 0;
+}
+
+.pad-b-quarter {
+  padding-bottom: 5px;
+}
+
+.pad-b-half {
+  padding-bottom: 10px;
+}
+
+.pad-b-one {
+  padding-bottom: 20px;
+}
+
+.pad-b-double {
+  padding-bottom: 40px;
+}
+
+.pad-b-quad {
   padding-bottom: 80px;
 }
 
-.pad-l-huge {
+@media screen and (min-width: 0px) {
+  .pad-b-gutter {
+    padding-bottom: 25px;
+  }
+}
+
+@media screen and (min-width: 540px) {
+  .pad-b-gutter {
+    padding-bottom: 20px;
+  }
+}
+
+.mar-l-zero {
+  margin-left: 0;
+}
+
+.mar-l-quarter {
+  margin-left: 5px;
+}
+
+.mar-l-half {
+  margin-left: 10px;
+}
+
+.mar-l-one {
+  margin-left: 20px;
+}
+
+.mar-l-double {
+  margin-left: 40px;
+}
+
+.mar-l-quad {
+  margin-left: 80px;
+}
+
+@media screen and (min-width: 0px) {
+  .mar-l-gutter {
+    margin-left: 25px;
+  }
+}
+
+@media screen and (min-width: 540px) {
+  .mar-l-gutter {
+    margin-left: 20px;
+  }
+}
+
+.pad-l-zero {
+  padding-left: 0;
+}
+
+.pad-l-quarter {
+  padding-left: 5px;
+}
+
+.pad-l-half {
+  padding-left: 10px;
+}
+
+.pad-l-one {
+  padding-left: 20px;
+}
+
+.pad-l-double {
+  padding-left: 40px;
+}
+
+.pad-l-quad {
   padding-left: 80px;
 }
 
-.pad-x-huge {
-  padding-left: 80px;
+@media screen and (min-width: 0px) {
+  .pad-l-gutter {
+    padding-left: 25px;
+  }
+}
+
+@media screen and (min-width: 540px) {
+  .pad-l-gutter {
+    padding-left: 20px;
+  }
+}
+
+.mar-r-zero {
+  margin-right: 0;
+}
+
+.mar-r-quarter {
+  margin-right: 5px;
+}
+
+.mar-r-half {
+  margin-right: 10px;
+}
+
+.mar-r-one {
+  margin-right: 20px;
+}
+
+.mar-r-double {
+  margin-right: 40px;
+}
+
+.mar-r-quad {
+  margin-right: 80px;
+}
+
+@media screen and (min-width: 0px) {
+  .mar-r-gutter {
+    margin-right: 25px;
+  }
+}
+
+@media screen and (min-width: 540px) {
+  .mar-r-gutter {
+    margin-right: 20px;
+  }
+}
+
+.pad-r-zero {
+  padding-right: 0;
+}
+
+.pad-r-quarter {
+  padding-right: 5px;
+}
+
+.pad-r-half {
+  padding-right: 10px;
+}
+
+.pad-r-one {
+  padding-right: 20px;
+}
+
+.pad-r-double {
+  padding-right: 40px;
+}
+
+.pad-r-quad {
   padding-right: 80px;
 }
 
-.pad-y-huge {
-  padding-top: 80px;
-  padding-bottom: 80px;
+@media screen and (min-width: 0px) {
+  .pad-r-gutter {
+    padding-right: 25px;
+  }
+}
+
+@media screen and (min-width: 540px) {
+  .pad-r-gutter {
+    padding-right: 20px;
+  }
 }
 
 .mar-x-auto {
@@ -784,52 +831,69 @@ a:hover {
 }
 
 /*
-
   TYPE
-  Type styles and sizes. The sizes allow for a responsive scale for each class,
-  so that scaling type up as screen sizes increase doesn't require multiple
-  classes and our typography doesn't become a mess of disparate rules. Switch
-  'em up if you need, but pay attention to how the rest of the system changes.
-
 */
-.font-tiny {
+/*
+  TYPE SIZES
+
+  The sizes allow for a responsive scale for each class, so that scaling type up
+  as screen sizes increase doesn't require multiple classes and our typography
+  doesn't become a mess of disparate rules. Switch 'em up if you need, but pay
+  attention to how the rest of the system changes.
+*/
+.font-alpha {
   font-size: 15px;
 }
 
-.font-small {
+.font-beta {
   font-size: 20px;
 }
 
-.font-medium {
+.font-gamma {
   font-size: 23px;
 }
 
 @media screen and (min-width: 768px) {
-  .font-medium {
+  .font-gamma {
     font-size: 24px;
   }
 }
 
-.font-large {
+.font-delta {
   font-size: 28px;
 }
 
 @media screen and (min-width: 768px) {
-  .font-large {
+  .font-delta {
     font-size: 36px;
   }
 }
 
-.font-huge {
+.font-omega {
   font-size: 42px;
 }
 
 @media screen and (min-width: 768px) {
-  .font-huge {
+  .font-omega {
     font-size: 56px;
   }
 }
 
+.line-solid {
+  line-height: 1;
+}
+
+.line-close {
+  line-height: 1.15;
+}
+
+.line-text {
+  line-height: 1.4;
+}
+
+/*
+  TYPE STYLE
+*/
 .face-text {
   font-family: "Roboto", Helvetica, sans-serif;
 }
@@ -866,82 +930,8 @@ a:hover {
   font-weight: 900;
 }
 
-.align-l {
-  text-align: left;
-}
-
-.align-r {
-  text-align: right;
-}
-
-.align-c {
-  text-align: center;
-}
-
-@media screen and (min-width: 0px) {
-  .align-l--small {
-    text-align: left;
-  }
-  .align-r--small {
-    text-align: right;
-  }
-  .align-c--small {
-    text-align: center;
-  }
-}
-
-@media screen and (min-width: 540px) {
-  .align-l--medium {
-    text-align: left;
-  }
-  .align-r--medium {
-    text-align: right;
-  }
-  .align-c--medium {
-    text-align: center;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .align-l--large {
-    text-align: left;
-  }
-  .align-r--large {
-    text-align: right;
-  }
-  .align-c--large {
-    text-align: center;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .align-l--xlarge {
-    text-align: left;
-  }
-  .align-r--xlarge {
-    text-align: right;
-  }
-  .align-c--xlarge {
-    text-align: center;
-  }
-}
-
-.line-solid {
-  line-height: 1;
-}
-
-.line-close {
-  line-height: 1.15;
-}
-
-.line-text {
-  line-height: 1.4;
-}
-
 /*
-
   DISPLAY
-
 */
 .inline {
   display: inline;
@@ -1035,10 +1025,138 @@ a:hover {
   }
 }
 
+.clearfix::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.clear-l {
+  clear: left;
+}
+
+.clear-r {
+  clear: right;
+}
+
+.clear-b {
+  clear: both;
+}
+
+.clear-n {
+  clear: none;
+}
+
+.float-l {
+  float: left;
+}
+
+.float-r {
+  float: right;
+}
+
+.float-n {
+  float: none;
+}
+
+@media screen and (min-width: 0px) {
+  .clear-l--small {
+    clear: left;
+  }
+  .clear-r--small {
+    clear: right;
+  }
+  .clear-b--small {
+    clear: both;
+  }
+  .clear-n--small {
+    clear: none;
+  }
+  .float-l--small {
+    float: left;
+  }
+  .float-r--small {
+    float: right;
+  }
+  .float-n--small {
+    float: none;
+  }
+}
+
+@media screen and (min-width: 540px) {
+  .clear-l--medium {
+    clear: left;
+  }
+  .clear-r--medium {
+    clear: right;
+  }
+  .clear-b--medium {
+    clear: both;
+  }
+  .clear-n--medium {
+    clear: none;
+  }
+  .float-l--medium {
+    float: left;
+  }
+  .float-r--medium {
+    float: right;
+  }
+  .float-n--medium {
+    float: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .clear-l--large {
+    clear: left;
+  }
+  .clear-r--large {
+    clear: right;
+  }
+  .clear-b--large {
+    clear: both;
+  }
+  .clear-n--large {
+    clear: none;
+  }
+  .float-l--large {
+    float: left;
+  }
+  .float-r--large {
+    float: right;
+  }
+  .float-n--large {
+    float: none;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .clear-l--xlarge {
+    clear: left;
+  }
+  .clear-r--xlarge {
+    clear: right;
+  }
+  .clear-b--xlarge {
+    clear: both;
+  }
+  .clear-n--xlarge {
+    clear: none;
+  }
+  .float-l--xlarge {
+    float: left;
+  }
+  .float-r--xlarge {
+    float: right;
+  }
+  .float-n--xlarge {
+    float: none;
+  }
+}
+
 /*
-
   HIDE
-
 */
 /*
   Totally nixes an element, making it inaccessible to screen readers and pretty
@@ -1109,11 +1227,9 @@ a:hover {
 }
 
 /*
-
   MEDIA
   NOTE 4/15/16: possibly move these or expand upon this file? this group seems
   nebulously-defined at this point
-
 */
 .constrain {
   max-width: 100%;

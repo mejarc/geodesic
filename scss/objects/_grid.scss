@@ -1,15 +1,8 @@
 /*
-
   GRID
   Responsive chainable grid classes, complete with subgrids. These are all
-  generated from the settings in $grids.
-
+  generated from the settings in $grids-breakpoints.
 */
-
-.grid-col {
-  position: relative;
-  float: left;
-}
 
 @each $grid-name, $grid-settings in $grid-breakpoints {
   $query: map-get($grid-settings, query);
@@ -20,6 +13,8 @@
   @include media($query) {
     @for $i from 1 through $columns {
       .#{$grid-name}-#{$i} {
+        position: relative;
+        float: left;
         width: percentage($i / $columns);
         padding-left: $gutter / 2;
         padding-right: $gutter / 2;

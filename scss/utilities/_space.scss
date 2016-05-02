@@ -1,47 +1,64 @@
 /*
-
   SPACE
-  Defines useful spacing utilities. These are aaaaall generated based on a list
-  of steps in $space-scale. Feel free to add more, but be aware that extra steps
-  produce a lot of of rules. Be judicious.
 
-  NOTE 4/15/16: Because of how many spacing rules there are, I'm reluctant to
-  further complicate this set by adding breakpoints. In the future I may do
-  something similar to _type.scss and set up a sliding scale to minimize the
-  number of rules needed to make sane spacing happen. If you run into a problem
-  around needing different spaces at different sizes, talk to Liam.
-
+  Define spacing utility classes! I'm keeping some settings here because they're
+  only used here and they make more sense in context.
 */
 
-@each $name, $multiplier in $space-scale {
-  .mar-#{$name}   { margin:        $space-unit * $multiplier }
-  .mar-t-#{$name} { margin-top:    $space-unit * $multiplier }
-  .mar-r-#{$name} { margin-right:  $space-unit * $multiplier }
-  .mar-b-#{$name} { margin-bottom: $space-unit * $multiplier }
-  .mar-l-#{$name} { margin-left:   $space-unit * $multiplier }
-  .mar-x-#{$name} {
-    margin-left: $space-unit * $multiplier;
-    margin-right: $space-unit * $multiplier;
-  }
-  .mar-y-#{$name} {
-    margin-top: $space-unit * $multiplier;
-    margin-bottom: $space-unit * $multiplier;
+$space-unit: 20px;
+
+$space-directions: (
+  '': '',
+  't': 'top',
+  'b': 'bottom',
+  'l': 'left',
+  'r': 'right'
+);
+
+// Generate math-based and grid-based spacing rules
+
+@each $name, $direction in $space-directions {
+  @if str-length($name) > 0 { $name: $name + '-'; }
+  @if str-length($direction) > 0 { $direction: '-' + $direction; }
+
+  .mar-#{$name}zero      { margin#{$direction}: 0; }
+  .mar-#{$name}quarter   { margin#{$direction}: quarter($space-unit); }
+  .mar-#{$name}half      { margin#{$direction}: half($space-unit); }
+  .mar-#{$name}one       { margin#{$direction}: $space-unit; }
+  .mar-#{$name}double    { margin#{$direction}: double($space-unit); }
+  .mar-#{$name}quad      { margin#{$direction}: quadruple($space-unit); }
+
+  .mar-#{$name}gutter {
+    @each $grid-name, $grid-settings in $grid-breakpoints {
+      $query: map-get($grid-settings, query);
+      $gutter: map-get($grid-settings, gutter);
+
+      @include media($query) {
+        margin#{$direction}: $gutter;
+      }
+    }
   }
 
-  .pad-#{$name}   { padding:        $space-unit * $multiplier }
-  .pad-t-#{$name} { padding-top:    $space-unit * $multiplier }
-  .pad-r-#{$name} { padding-right:  $space-unit * $multiplier }
-  .pad-b-#{$name} { padding-bottom: $space-unit * $multiplier }
-  .pad-l-#{$name} { padding-left:   $space-unit * $multiplier }
-  .pad-x-#{$name} {
-    padding-left: $space-unit * $multiplier;
-    padding-right: $space-unit * $multiplier;
-  }
-  .pad-y-#{$name} {
-    padding-top: $space-unit * $multiplier;
-    padding-bottom: $space-unit * $multiplier;
+  .pad-#{$name}zero      { padding#{$direction}: 0; }
+  .pad-#{$name}quarter   { padding#{$direction}: quarter($space-unit); }
+  .pad-#{$name}half      { padding#{$direction}: half($space-unit); }
+  .pad-#{$name}one       { padding#{$direction}: $space-unit; }
+  .pad-#{$name}double    { padding#{$direction}: double($space-unit); }
+  .pad-#{$name}quad      { padding#{$direction}: quadruple($space-unit); }
+
+  .pad-#{$name}gutter {
+    @each $grid-name, $grid-settings in $grid-breakpoints {
+      $query: map-get($grid-settings, query);
+      $gutter: map-get($grid-settings, gutter);
+
+      @include media($query) {
+        padding#{$direction}: $gutter;
+      }
+    }
   }
 }
+
+// Non-mathy functional spacing rules. The fewer of these, the better!
 
 .mar-x-auto {
   margin-left: auto;

@@ -1,0 +1,33 @@
+.clearfix { @include clearfix; }
+
+.clear-l { clear: left; }
+.clear-r { clear: right; }
+.clear-b { clear: both; }
+.clear-n { clear: none; }
+
+.float-l { float: left; }
+.float-r { float: right; }
+.float-n { float: none; }
+
+$float-sizes: (
+  'small': $small-up,
+  'medium': $medium-up,
+  'large': $large-up,
+  'xlarge': $xlarge-up
+);
+
+@each $name, $breakpoint in $float-sizes {
+  // Separate base class with breakpoint abbreviation
+  $mod: '--' + $name;
+
+  @include media($breakpoint) {
+    .clear-l#{$mod} { clear: left; }
+    .clear-r#{$mod} { clear: right; }
+    .clear-b#{$mod} { clear: both; }
+    .clear-n#{$mod} { clear: none; }
+
+    .float-l#{$mod} { float: left; }
+    .float-r#{$mod} { float: right; }
+    .float-n#{$mod} { float: none; }
+  }
+}

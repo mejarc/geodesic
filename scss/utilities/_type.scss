@@ -1,67 +1,7 @@
 /*
-
   TYPE
-  Type styles and sizes. The sizes allow for a responsive scale for each class,
-  so that scaling type up as screen sizes increase doesn't require multiple
-  classes and our typography doesn't become a mess of disparate rules. Switch
-  'em up if you need, but pay attention to how the rest of the system changes.
-
 */
 
-@mixin font-scale($breakpoint, $size) {
-  @include media($breakpoint) { font-size: $size; }
-}
-
-.font-tiny { font-size: 15px; }
-.font-small { font-size: 20px; }
-.font-medium {
-  font-size: 23px;
-  @include font-scale($large-up, 24px);
-}
-.font-large {
-  font-size: 28px;
-  @include font-scale($large-up, 36px);
-}
-.font-huge {
-  font-size: 42px;
-  @include font-scale($large-up, 56px);
-}
-
-.face-text { font-family: $text-font; }
-.face-code { font-family: $code-font; }
-
-.underline { text-decoration: underline; }
-.tracked { letter-spacing: 0.15em; }
-.uppercase { text-transform: uppercase; }
-.italic { font-style: italic; }
-
-// Depending on your fonts, you might need more or fewer of these classes
-.light { font-weight: 300; }
-.bold { font-weight: bold; }
-.heavy { font-weight: 900; }
-
-.align-l { text-align: left; }
-.align-r { text-align: right; }
-.align-c { text-align: center; }
-
-$align-sizes: (
-  'small': $small-up,
-  'medium': $medium-up,
-  'large': $large-up,
-  'xlarge': $xlarge-up
-);
-
-@each $name, $breakpoint in $align-sizes {
-  // Separate base class with breakpoint abbreviation
-  $mod: '--' + $name;
-
-  @include media($breakpoint) {
-    .align-l#{$mod} { text-align: left; }
-    .align-r#{$mod} { text-align: right; }
-    .align-c#{$mod} { text-align: center; }
-  }
-}
-
-.line-solid { line-height: 1; }
-.line-close { line-height: 1.15; }
-.line-text { line-height: 1.4; }
+@import "type.size";
+@import "type.style";
+@import "type.alignment";

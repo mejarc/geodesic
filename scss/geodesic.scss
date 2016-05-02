@@ -5,19 +5,19 @@
 
 // Helpers provide useful mixins and functions to make class composition easier
 @import "helpers/flex";
+@import "helpers/math";
 
 // Settings come first, to set up the system according to some basic parameters
 @import "settings/breakpoints";
 @import "settings/grid";
-@import "settings/sizes";
 @import "settings/colors";
 @import "settings/typography";
 
 // Then we set some defaults, before any of the classy magic starts
 @import "defaults";
 
-// Contexts modify elements under them. Use them for spacing or to add rules to
-// bare elements in a safe, scoped way
+// Contexts modify elements under them. Use them to add rules to unclassed
+// elements in a safe, scoped way
 @import "contexts/content-style";
 
 // Objects are re-usable interface patterns
@@ -29,5 +29,6 @@
 @import "utilities/space";
 @import "utilities/type";
 @import "utilities/display";
+@import "utilities/float";
 @import "utilities/hide";
 @import "utilities/media";

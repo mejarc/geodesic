@@ -1,0 +1,32 @@
+/*
+  TYPE SIZES
+
+  The sizes allow for a responsive scale for each class, so that scaling type up
+  as screen sizes increase doesn't require multiple classes and our typography
+  doesn't become a mess of disparate rules. Switch 'em up if you need, but pay
+  attention to how the rest of the system changes.
+*/
+
+@mixin font-scale($breakpoint, $size) {
+  @include media($breakpoint) { font-size: $size; }
+}
+
+.font-alpha { font-size: 15px; }
+.font-beta { font-size: 20px; }
+.font-gamma {
+  font-size: 23px;
+  @include font-scale($large-up, 24px);
+}
+.font-delta {
+  font-size: 28px;
+  @include font-scale($large-up, 36px);
+}
+.font-omega {
+  font-size: 42px;
+  @include font-scale($large-up, 56px);
+}
+
+// Line heights
+.line-solid { line-height: 1; }
+.line-close { line-height: 1.15; }
+.line-text  { line-height: 1.4; }

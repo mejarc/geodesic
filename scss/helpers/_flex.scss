@@ -1,8 +1,11 @@
 /*
-  Common flex tasks in plain English, because you shouldn't have to learn what
-  "flex basis" means in order to make a web page.
+  FLEX HELPERS
 
-  First do `@include flex;`, then apply one of these rules.
+  Common flex tasks in plain English, because you shouldn't have to learn what
+  "flex basis" means in order to make a web page. *I* don't even know what it
+  means.
+
+  First do `@include flex;`, then apply one of these rules to your object class.
 */
 
 @mixin wrap-children-normally {

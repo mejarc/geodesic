@@ -1,0 +1,25 @@
+/*
+  MATH HELPERS
+
+  Useful math for making scales of values that stay in line when the unit
+  changes. Stay consistent (when it makes sense)!
+
+  Thanks to Dropbox's Scooter for this idea + file.
+  https://github.com/dropbox/scooter/blob/master/scss/functions/_maths.scss
+*/
+
+@function half($n) {
+  @return round($n / 2);
+}
+
+@function quarter($n) {
+  @return round($n / 4);
+}
+
+@function double($n) {
+  @return round($n * 2);
+}
+
+@function quadruple($n) {
+  @return round($n * 4);
+}

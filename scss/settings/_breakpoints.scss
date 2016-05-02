@@ -1,3 +1,17 @@
+/*
+  BREAKPOINT SETTINGS
+
+  These variables set up media queries that you can use throughout the system.
+  Use a breakpoint variable inside the `media` mixin to apply rules within a
+  media query. Like so:
+
+  ```
+  @include media($small-up) {
+    web-design: is-fun;
+  }
+  ```
+*/
+
 // Define site-wide breakpoints and settings for each
 
 $small-range:         0px 539px;
