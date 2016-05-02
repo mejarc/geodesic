@@ -15,98 +15,19 @@ $space-directions: (
   'r': 'right'
 );
 
+$space-steps: (
+  'zero': 0,
+  'quarter': quarter($space-unit),
+  'half': half($space-unit),
+  'one': $space-unit,
+  'double': double($space-unit),
+  'quad': quadruple($space-unit)
+);
+
 // Generate math-based and grid-based spacing rules
 
-@each $name, $direction in $space-directions {
-  @if str-length($name) > 0 { $name: $name + '-'; }
-  @if str-length($direction) > 0 { $direction: '-' + $direction; }
-
-  .mar-#{$name}zero      { margin#{$direction}: 0; }
-  .mar-#{$name}quarter   { margin#{$direction}: quarter($space-unit); }
-  .mar-#{$name}half      { margin#{$direction}: half($space-unit); }
-  .mar-#{$name}one       { margin#{$direction}: $space-unit; }
-  .mar-#{$name}double    { margin#{$direction}: double($space-unit); }
-  .mar-#{$name}quad      { margin#{$direction}: quadruple($space-unit); }
-
-  .mar-#{$name}gutter {
-    @each $grid-name, $grid-settings in $grid-breakpoints {
-      $query: map-get($grid-settings, query);
-      $gutter: map-get($grid-settings, gutter);
-
-      @include media($query) {
-        margin#{$direction}: $gutter;
-      }
-    }
-  }
-
-  .pad-#{$name}zero      { padding#{$direction}: 0; }
-  .pad-#{$name}quarter   { padding#{$direction}: quarter($space-unit); }
-  .pad-#{$name}half      { padding#{$direction}: half($space-unit); }
-  .pad-#{$name}one       { padding#{$direction}: $space-unit; }
-  .pad-#{$name}double    { padding#{$direction}: double($space-unit); }
-  .pad-#{$name}quad      { padding#{$direction}: quadruple($space-unit); }
-
-  .pad-#{$name}gutter {
-    @each $grid-name, $grid-settings in $grid-breakpoints {
-      $query: map-get($grid-settings, query);
-      $gutter: map-get($grid-settings, gutter);
-
-      @include media($query) {
-        padding#{$direction}: $gutter;
-      }
-    }
-  }
-}
-
-.mar-y-zero {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-.mar-y-quarter {
-  margin-top: quarter($space-unit);
-  margin-bottom: quarter($space-unit);
-}
-.mar-y-half {
-  margin-top: half($space-unit);
-  margin-bottom: half($space-unit);
-}
-.mar-y-one {
-  margin-top: $space-unit;
-  margin-bottom: $space-unit;
-}
-.mar-y-double {
-  margin-top: double($space-unit);
-  margin-bottom: double($space-unit);
-}
-.mar-y-quad {
-  margin-top: quadruple($space-unit);
-  margin-bottom: quadruple($space-unit);
-}
-
-.pad-y-zero {
-  padding-top: 0;
-  padding-bottom: 0;
-}
-.pad-y-quarter {
-  padding-top: quarter($space-unit);
-  padding-bottom: quarter($space-unit);
-}
-.pad-y-half {
-  padding-top: half($space-unit);
-  padding-bottom: half($space-unit);
-}
-.pad-y-one {
-  padding-top: $space-unit;
-  padding-bottom: $space-unit;
-}
-.pad-y-double {
-  padding-top: double($space-unit);
-  padding-bottom: double($space-unit);
-}
-.pad-y-quad {
-  padding-top: quadruple($space-unit);
-  padding-bottom: quadruple($space-unit);
-}
+@import "space.steps";
+@import "space.gutter";
 
 // Non-mathy functional spacing rules. The fewer of these, the better!
 

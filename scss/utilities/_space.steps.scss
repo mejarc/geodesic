@@ -1,0 +1,36 @@
+/*
+  SPACE STEPS
+
+  Generates rules that look like:
+
+  ```
+  .mar-t-one { margin-top: 20px; }
+  .mar-b-half { margin-bottom: 10px; }
+  .pad-y-double {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  ```
+*/
+
+@each $dir-name, $dir in $space-directions {
+  @if str-length($dir-name) > 0 { $dir-name: '-' + $dir-name; }
+  @if str-length($dir) > 0 { $dir: '-' + $dir; }
+
+  @each $step-name, $step in $space-steps {
+    .mar#{$dir-name}-#{$step-name} { margin#{$dir}: $step; }
+    .pad#{$dir-name}-#{$step-name} { padding#{$dir}: $step; }
+  }
+}
+
+@each $step-name, $step in $space-steps {
+  .mar-y-#{$step-name} {
+    margin-top: $step;
+    margin-bottom: $step;
+  }
+
+  .pad-y-#{$step-name} {
+    padding-top: $step;
+    padding-bottom: $step;
+  }
+}
