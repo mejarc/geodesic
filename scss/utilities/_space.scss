@@ -58,6 +58,56 @@ $space-directions: (
   }
 }
 
+.mar-y-zero {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.mar-y-quarter {
+  margin-top: quarter($space-unit);
+  margin-bottom: quarter($space-unit);
+}
+.mar-y-half {
+  margin-top: half($space-unit);
+  margin-bottom: half($space-unit);
+}
+.mar-y-one {
+  margin-top: $space-unit;
+  margin-bottom: $space-unit;
+}
+.mar-y-double {
+  margin-top: double($space-unit);
+  margin-bottom: double($space-unit);
+}
+.mar-y-quad {
+  margin-top: quadruple($space-unit);
+  margin-bottom: quadruple($space-unit);
+}
+
+.pad-y-zero {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.pad-y-quarter {
+  padding-top: quarter($space-unit);
+  padding-bottom: quarter($space-unit);
+}
+.pad-y-half {
+  padding-top: half($space-unit);
+  padding-bottom: half($space-unit);
+}
+.pad-y-one {
+  padding-top: $space-unit;
+  padding-bottom: $space-unit;
+}
+.pad-y-double {
+  padding-top: double($space-unit);
+  padding-bottom: double($space-unit);
+}
+.pad-y-quad {
+  padding-top: quadruple($space-unit);
+  padding-bottom: quadruple($space-unit);
+}
+
 // Non-mathy functional spacing rules. The fewer of these, the better!
 
 .mar-x-auto {
