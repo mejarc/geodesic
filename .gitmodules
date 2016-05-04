@@ -1,3 +1,3 @@
-[submodule "src/nuthin"]
-	path = src/nuthin
+[submodule "scss/nuthin"]
+	path = scss/nuthin
 	url = git://github.com/muledesign/nuthin.git

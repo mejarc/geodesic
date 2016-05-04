@@ -32,6 +32,18 @@
         margin-left: percentage($i / $columns);
       }
     }
+
+    @each $sub-grid-columns in $sub-grids {
+      @for $i from 1 through $sub-grid-columns {
+        .#{$grid-name}-#{$i}-of-#{$sub-grid-columns} {
+          position: relative;
+          float: left;
+          width: percentage($i / $sub-grid-columns);
+          padding-left: $gutter / 2;
+          padding-right: $gutter / 2;
+        }
+      }
+    }
   }
 }
 

@@ -23,6 +23,10 @@ ul {
   padding: 0;
 }
 
+li {
+  display: block;
+}
+
 article,
 aside,
 details,
@@ -59,6 +63,7 @@ a {
 }
 
 img {
+  max-width: 100%;
   height: auto;
   border: 0;
 }
@@ -312,6 +317,27 @@ a:hover {
   .small-offset-4 {
     margin-left: 100%;
   }
+  .small-1-of-3 {
+    position: relative;
+    float: left;
+    width: 33.33333%;
+    padding-left: 12.5px;
+    padding-right: 12.5px;
+  }
+  .small-2-of-3 {
+    position: relative;
+    float: left;
+    width: 66.66667%;
+    padding-left: 12.5px;
+    padding-right: 12.5px;
+  }
+  .small-3-of-3 {
+    position: relative;
+    float: left;
+    width: 100%;
+    padding-left: 12.5px;
+    padding-right: 12.5px;
+  }
 }
 
 @media screen and (min-width: 540px) {
@@ -442,6 +468,76 @@ a:hover {
   }
   .large-offset-8 {
     margin-left: 100%;
+  }
+  .large-1-of-4 {
+    position: relative;
+    float: left;
+    width: 25%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .large-2-of-4 {
+    position: relative;
+    float: left;
+    width: 50%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .large-3-of-4 {
+    position: relative;
+    float: left;
+    width: 75%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .large-4-of-4 {
+    position: relative;
+    float: left;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .large-1-of-6 {
+    position: relative;
+    float: left;
+    width: 16.66667%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .large-2-of-6 {
+    position: relative;
+    float: left;
+    width: 33.33333%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .large-3-of-6 {
+    position: relative;
+    float: left;
+    width: 50%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .large-4-of-6 {
+    position: relative;
+    float: left;
+    width: 66.66667%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .large-5-of-6 {
+    position: relative;
+    float: left;
+    width: 83.33333%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .large-6-of-6 {
+    position: relative;
+    float: left;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 
