@@ -4,6 +4,14 @@
   generated from the settings in $grids-breakpoints.
 */
 
+@mixin column($width, $gutter) {
+  position: relative;
+  float: left;
+  width: $width;
+  padding-left: $gutter / 2;
+  padding-right: $gutter / 2;
+}
+
 @each $grid-name, $grid-settings in $grid-breakpoints {
   $query: map-get($grid-settings, query);
   $columns: map-get($grid-settings, columns);
@@ -13,11 +21,7 @@
   @include media($query) {
     @for $i from 1 through $columns {
       .#{$grid-name}-#{$i} {
-        position: relative;
-        float: left;
-        width: percentage($i / $columns);
-        padding-left: $gutter / 2;
-        padding-right: $gutter / 2;
+        @include column(percentage($i / $columns), $gutter);
       }
 
       .#{$grid-name}-push-#{$i} {
@@ -36,11 +40,7 @@
     @each $sub-grid-columns in $sub-grids {
       @for $i from 1 through $sub-grid-columns {
         .#{$grid-name}-#{$i}-of-#{$sub-grid-columns} {
-          position: relative;
-          float: left;
-          width: percentage($i / $sub-grid-columns);
-          padding-left: $gutter / 2;
-          padding-right: $gutter / 2;
+          @include column(percentage($i / $columns), $gutter);
         }
       }
     }
