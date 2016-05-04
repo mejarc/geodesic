@@ -18,7 +18,7 @@
 
 // Contexts modify elements under them. Use them to add rules to unclassed
 // elements in a safe, scoped way
-@import "contexts/content-style";
+@import "contexts/base";
 
 // Objects are re-usable interface patterns
 @import "objects/grid";

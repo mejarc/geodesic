@@ -164,6 +164,84 @@ a:hover {
   background-color: #feeaee;
 }
 
+.context-base p, .context-base ul, .context-base ol, .context-base dl, .context-base blockquote {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.context-base h2, .context-base h3, .context-base h4, .context-base h5, .context-base h6 {
+  margin-top: 2em;
+}
+
+.context-base h2 + h2 {
+  margin-top: 1em;
+}
+
+.context-base h2 + h3 {
+  margin-top: 1em;
+}
+
+.context-base h2 + h4 {
+  margin-top: 1em;
+}
+
+.context-base h2 + h5 {
+  margin-top: 1em;
+}
+
+.context-base h2 + h6 {
+  margin-top: 1em;
+}
+
+.context-base h3 + h3 {
+  margin-top: 1em;
+}
+
+.context-base h3 + h4 {
+  margin-top: 1em;
+}
+
+.context-base h3 + h5 {
+  margin-top: 1em;
+}
+
+.context-base h3 + h6 {
+  margin-top: 1em;
+}
+
+.context-base h4 + h4 {
+  margin-top: 1em;
+}
+
+.context-base h4 + h5 {
+  margin-top: 1em;
+}
+
+.context-base h4 + h6 {
+  margin-top: 1em;
+}
+
+.context-base h5 + h5 {
+  margin-top: 1em;
+}
+
+.context-base h5 + h6 {
+  margin-top: 1em;
+}
+
+.context-base h6 + h6 {
+  margin-top: 1em;
+}
+
+.context-base code {
+  background-color: #eff0f1;
+  color: #757986;
+  font-family: "Source Code Pro", Consolas, Menlo, monospace;
+  font-size: 0.8em;
+  padding: 0.1em;
+  border-radius: 2px;
+}
+
 /*
   GRID
   Responsive chainable grid classes, complete with subgrids. These are all
@@ -479,6 +557,66 @@ a:hover {
   }
   ```
 */
+.mar-y-zero {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.pad-y-zero {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.mar-y-quarter {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.pad-y-quarter {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.mar-y-half {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.pad-y-half {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.mar-y-one {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.pad-y-one {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.mar-y-double {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.pad-y-double {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.mar-y-quad {
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.pad-y-quad {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
 .mar-zero {
   margin: 0;
 }
@@ -719,66 +857,6 @@ a:hover {
   padding-right: 80px;
 }
 
-.mar-y-zero {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.pad-y-zero {
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
-.mar-y-quarter {
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
-.pad-y-quarter {
-  padding-top: 5px;
-  padding-bottom: 5px;
-}
-
-.mar-y-half {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.pad-y-half {
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-.mar-y-one {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.pad-y-one {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-.mar-y-double {
-  margin-top: 40px;
-  margin-bottom: 40px;
-}
-
-.pad-y-double {
-  padding-top: 40px;
-  padding-bottom: 40px;
-}
-
-.mar-y-quad {
-  margin-top: 80px;
-  margin-bottom: 80px;
-}
-
-.pad-y-quad {
-  padding-top: 80px;
-  padding-bottom: 80px;
-}
-
 /*
   GUTTER SPACES
 
@@ -958,6 +1036,9 @@ a:hover {
   }
 }
 
+/*
+  TYPE LINE HEIGHTS
+*/
 .line-solid {
   line-height: 1;
 }

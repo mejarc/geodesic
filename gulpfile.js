@@ -31,6 +31,7 @@ gulp.task('sass', function() {
       includePaths: sassIncludes
     }).on('error', sass.logError))
     .pipe(gulp.dest(DEST_DIR))
+    .pipe(parker())
     .pipe(connect.reload())
 });
 gulp.task('sass:watch', function() {
