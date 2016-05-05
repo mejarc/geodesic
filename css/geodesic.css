@@ -239,8 +239,8 @@ a:hover {
 }
 
 .context-base code {
-  background-color: #eff0f1;
-  color: #757986;
+  background-color: #ececee;
+  color: #656976;
   font-family: "Source Code Pro", Consolas, Menlo, monospace;
   font-size: 0.8em;
   padding: 0.1em;
@@ -610,11 +610,11 @@ a:hover {
 }
 
 .color-gray {
-  color: #757986;
+  color: #656976;
 }
 
 .bg-gray {
-  background-color: #757986;
+  background-color: #656976;
 }
 
 .color-offblack {
