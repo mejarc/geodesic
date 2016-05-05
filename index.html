@@ -55,11 +55,35 @@
     </div>
     <div class="grid-row font-beta face-text line-text mar-y-quad context-base">
       <h2 class="font-delta color-navy light line-solid">Concepts</h2>
-      <p><strong>Settings</strong></p>
-      <p><strong>Helpers</strong></p>
-      <p><strong>Objects</strong></p>
-      <p><strong>Contexts</strong></p>
-      <p><strong>Utilities</strong></p>
+      <p>
+        Geodesic uses a simple, yet powerful organization for its components.
+        Each of its five concepts correspond to a different directory of Sass partials that do different things.
+      </p>
+      <p>
+        <strong>Settings</strong> control variables and values for use in other files.
+        Things defined in settings files should be used by multiple other classes or components.
+      </p>
+      <p>
+        <strong>Helpers</strong> are sets of useful functions and mixins that don't directly compile to CSS.
+        Instead, you use helpers to apply properties to classes with a nice extra layer of abstraction.
+        You shouldn't have to think about helpers very often, but they're there when you need them.
+      </p>
+      <p>
+        <strong>Objects</strong> are classes that apply several rules to represent a repeatable pattern in the design system.
+        Great object classes are one layer of abstraction away from an element's specific use.
+        The canonical example is the world-famous <a href="http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/">media object as described by Nicole Sullivan</a>.
+      </p>
+      <p>
+        <strong>Contexts</strong> are classes that don't apply rules to their own element, but instead act on that element's children.
+        Contexts are especially useful when user-defined content can't be expected to have sophisticated, classed markup.
+        Geodesic ships with a `base` context that applies simple text styles to unclassed content.
+        It's fine to have a few contexts, but they're best used conservatively since their effects are difficult to override in exceptional cases.
+      </p>
+      <p>
+        <strong>Utilities</strong> are classes that add very specific styles to elements without side-effects.
+        It should be very obvious from the name of a utility class what CSS property it acts upon.
+        Utilities come last in the cascade to give precedence in the design system.
+      </p>
     </div>
     <div class="grid-row font-beta face-text line-text mar-y-quad context-base ">
       <h2 class="font-delta color-navy light line-solid">Components</h2>
