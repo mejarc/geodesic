@@ -20,6 +20,18 @@
   @return round($n * 2);
 }
 
+@function triple($n) {
+  @return round($n * 3);
+}
+
 @function quadruple($n) {
   @return round($n * 4);
+}
+
+@function sextuple($n) {
+  @return round($n * 6);
+}
+
+@function octuple($n) {
+  @return round($n * 8);
 }

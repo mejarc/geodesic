@@ -1,0 +1,31 @@
+/*
+  ASPECT RATIO
+  Maintain a given aspect ratio for an element, regardless of width
+  Code stolen shamelessly from mrmrs, hallowed be his name:
+  https://github.com/mrmrs/tachyons/blob/master/src/_utilities.css
+*/
+
+// 16:9
+.ar-cinema {
+  height: 0;
+  padding-top: 56.25%;
+  position: relative;
+}
+
+// 1:1
+.ar-square {
+  height: 0;
+  padding-top: 100%;
+  position: relative;
+}
+
+.ar-inner {
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}

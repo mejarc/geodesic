@@ -1,0 +1,25 @@
+/*
+  FLAG
+  Used to vertically align a fluid-width element and a fixed-width element next to
+  one another. Pinched from Dropbox's Scooter.
+  https://github.com/dropbox/scooter/blob/master/scss/objects/_flag.scss
+*/
+
+.flag {
+  display: table;
+  width: 100%;
+}
+
+.flag-fix,
+.flag-flex {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.flag-fix {
+  white-space: nowrap;
+}
+
+.flag-flex {
+  width: 100%;
+}
