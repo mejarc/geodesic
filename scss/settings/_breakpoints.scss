@@ -1,31 +1,93 @@
 /*
   BREAKPOINT SETTINGS
-
-  These variables set up media queries that you can use throughout the system.
-  Use a breakpoint variable inside the `media` mixin to apply rules within a
-  media query. Like so:
-
-  ```
-  @include media($small-up) {
-    web-design: is-fun;
-  }
-  ```
 */
 
-// Define site-wide breakpoints and settings for each
+$breakpoints: (
+  'tiny': (
+    'min': 0px,
+    'max': 499px
+  ),
+  'small': (
+    'min': 500px,
+    'max': 700px
+  ),
+  'medium': (
+    'min': 701px,
+    'max': 960px
+  ),
+  'large': (
+    'min': 961px,
+    'max': 1279px,
+  ),
+  'xlarge': (
+    'min': 1280px,
+    'max': none
+  )
+);
 
-$small-range:         0px 539px;
-$medium-range:        540px 767px;
-$large-range:         768px 1023px;
-$xlarge-range:        1024px;
+// Returns breakpoint settings by name
+@function get-breakpoint($name) {
+  $breakpoint: map-get($breakpoints, $name);
 
-// Breakpoints include the total number of columns in each breakpoint's layout
-$small-only:          max-width nth($small-range, 2);
-$small-up:            min-width nth($small-range, 1);
-$medium-only:         min-width nth($medium-range, 1) max-width nth($medium-range, 2);
-$medium-up:           min-width nth($medium-range, 1);
-$up-to-large:         max-width nth($medium-range, 2);
-$large-only:          min-width nth($large-range, 1) max-width nth($large-range, 2);
-$large-up:            min-width nth($large-range, 1);
-$up-to-xlarge:        max-width nth($large-range, 2);
-$xlarge-up:           min-width nth($xlarge-range, 1);
+  @if $breakpoint == null {
+    @error "Error: #{$name} isn't a named breakpoint. :(";
+  }
+
+  @return $breakpoint;
+}
+
+// Returns settings for the breakpoint previous to the name given
+@function get-previous-breakpoint($name) {
+  // Turn the breakpoint map into a list of keys
+  $breakpoint-list: map-keys($breakpoints);
+  // Get the index of the named breakpoint and subtract one for the previous index
+  $prev-index: index($breakpoint-list, $name) - 1;
+  // Use the previous breakpoint index to get its name...
+  $prev-breakpoint-name: nth($breakpoint-list, $prev-index);
+  // And then use the previous breakpoint name to get its settings
+  $prev-breakpoint: map-get($breakpoints, $prev-breakpoint-name);
+
+  @return $prev-breakpoint;
+}
+
+// Returns the minimum width in a breakpoint's settings
+@function get-breakpoint-min($breakpoint) {
+  @return map-get($breakpoint, 'min');
+}
+
+// Returns the maximum width in a breakpoint's settings
+@function get-breakpoint-max($breakpoint) {
+  @return map-get($breakpoint, 'max');
+}
+
+@mixin for-breakpoint($query) {
+  $breakpoint: get-breakpoint(nth($query, 1));
+
+  // If you just a breakpoint name (like 'large')...
+  @if length($query) == 1 {
+    // Then we just pass it through and assume you wanted a min-width query
+    @media (min-width: get-breakpoint-min($query)) {
+      @content;
+    }
+  // Otherwise we start cutting it up and you can have more advanced queries
+  } @else if length($query) == 2 {
+    $directive: nth($query, 2);
+
+    @if $directive == "up" {
+      // Breakpoint min-width, no max
+      @media (min-width: get-breakpoint-min($breakpoint)) {
+        @content;
+      }
+    } @else if $directive == "only" {
+      // Breakpoint min-width and max-width
+      @media (min-width: get-breakpoint-min($breakpoint)) and (max-width: get-breakpoint-max($breakpoint)) {
+        @content;
+      }
+    } @else if $directive == "under" {
+      // Up to the named breakpoint, non-inclusive
+      @media (max-width: get-breakpoint-max(get-previous-breakpoint($breakpoint))) {
+        @content;
+      }
+    }
+  }
+}

@@ -2,25 +2,6 @@
   TYPE ALIGNMENT
 */
 
-// Alignment is delineated by breakpoint for more complex responsive layouts
 .align-l { text-align: left; }
 .align-r { text-align: right; }
 .align-c { text-align: center; }
-
-$align-sizes: (
-  'small': $small-up,
-  'medium': $medium-up,
-  'large': $large-up,
-  'xlarge': $xlarge-up
-);
-
-@each $name, $breakpoint in $align-sizes {
-  // Separate base class with breakpoint abbreviation
-  $mod: '--' + $name;
-
-  @include media($breakpoint) {
-    .align-l#{$mod} { text-align: left; }
-    .align-r#{$mod} { text-align: right; }
-    .align-c#{$mod} { text-align: center; }
-  }
-}

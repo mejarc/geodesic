@@ -7,23 +7,3 @@
 .inline-block { display: inline-block }
 .table        { display: table }
 .table-cell   { display: table-cell }
-
-$display-sizes: (
-  'small': $small-up,
-  'medium': $medium-up,
-  'large': $large-up,
-  'xlarge': $xlarge-up
-);
-
-@each $name, $breakpoint in $display-sizes {
-  // Separate base class with breakpoint abbreviation
-  $mod: '--' + $name;
-
-  @include media($breakpoint) {
-    .inline#{$mod}       { display: inline }
-    .block#{$mod}        { display: block }
-    .inline-block#{$mod} { display: inline-block }
-    .table#{$mod}        { display: table }
-    .table-cell#{$mod}   { display: table-cell }
-  }
-}

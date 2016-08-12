@@ -27,7 +27,6 @@ $space-steps: (
 // Generate math-based and grid-based spacing rules
 
 @import "space.steps";
-@import "space.gutter";
 
 // Non-mathy functional spacing rules. The fewer of these, the better!
 

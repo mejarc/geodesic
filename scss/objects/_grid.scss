@@ -18,7 +18,7 @@
   $gutter: map-get($grid-settings, gutter);
   $sub-grids: map-get($grid-settings, sub-grids);
 
-  @include media($query) {
+  @include for-breakpoint($query) {
     @for $i from 1 through $columns {
       .#{$grid-name}-#{$i} {
         @include column(percentage($i / $columns), $gutter);
@@ -56,7 +56,7 @@
     $query: map-get($grid-settings, query);
     $gutter: map-get($grid-settings, gutter);
 
-    @include media($query) {
+    @include for-breakpoint($query) {
       padding-left: $gutter / 2;
       padding-right: $gutter / 2;
     }

@@ -21,20 +21,3 @@
 
 .hide { @include hide; }
 .gone { @include gone; }
-
-$hide-sizes: (
-  'small': $small-up,
-  'medium': $medium-up,
-  'large': $large-up,
-  'xlarge': $xlarge-up
-);
-
-@each $name, $breakpoint in $hide-sizes {
-  // Separate base class with breakpoint abbreviation
-  $mod: '--' + $name;
-
-  @include media($breakpoint) {
-    .hide#{$mod} { @include hide; }
-    .gone#{$mod} { @include gone; }
-  }
-}

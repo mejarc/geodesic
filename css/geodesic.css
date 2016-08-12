@@ -127,14 +127,6 @@ td, th {
   font-weight: normal;
 }
 
-html {
-  box-sizing: border-box;
-}
-
-*, *::after, *::before {
-  box-sizing: inherit;
-}
-
 /*
   FLEX HELPERS
 
@@ -155,16 +147,6 @@ html {
 */
 /*
   BREAKPOINT SETTINGS
-
-  These variables set up media queries that you can use throughout the system.
-  Use a breakpoint variable inside the `media` mixin to apply rules within a
-  media query. Like so:
-
-  ```
-  @include media($small-up) {
-    web-design: is-fun;
-  }
-  ```
 */
 /*
   GRID SETTINGS
@@ -183,26 +165,7 @@ html {
   Font stacks, pervasive typo settings of all kinds.
 */
 body {
-  color: #3F3E4C;
   font-family: "Roboto", Helvetica, sans-serif;
-}
-
-a {
-  color: #222;
-  border-bottom: 2px solid #F8708E;
-  -webkit-transition-property: background-color color;
-  -moz-transition-property: background-color color;
-  transition-property: background-color color;
-  -webkit-transition-duration: 0.2s;
-  -moz-transition-duration: 0.2s;
-  transition-duration: 0.2s;
-  -webkit-transition-timing-function: ease;
-  -moz-transition-timing-function: ease;
-  transition-timing-function: ease;
-}
-
-a:hover {
-  background-color: #feeaee;
 }
 
 .context-base p, .context-base ul, .context-base ol, .context-base dl, .context-base blockquote {
@@ -288,7 +251,7 @@ a:hover {
   Responsive chainable grid classes, complete with subgrids. These are all
   generated from the settings in $grids-breakpoints.
 */
-@media screen and (min-width: 0px) {
+@media (min-width: 500px) {
   .small-1 {
     position: relative;
     float: left;
@@ -376,7 +339,7 @@ a:hover {
   }
 }
 
-@media screen and (min-width: 540px) {
+@media (min-width: 701px) {
   .large-1 {
     position: relative;
     float: left;
@@ -582,14 +545,14 @@ a:hover {
   margin: 0 auto;
 }
 
-@media screen and (min-width: 0px) {
+@media (min-width: 500px) {
   .grid-row {
     padding-left: 12.5px;
     padding-right: 12.5px;
   }
 }
 
-@media screen and (min-width: 540px) {
+@media (min-width: 701px) {
   .grid-row {
     padding-left: 10px;
     padding-right: 10px;
@@ -597,12 +560,7 @@ a:hover {
 }
 
 .button {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  -o-appearance: none;
   appearance: none;
-  box-sizing: border-box;
   display: inline-block;
   padding: 0.75em;
   border: 0;
@@ -989,131 +947,6 @@ a:hover {
   padding-right: 80px;
 }
 
-/*
-  GUTTER SPACES
-
-  Generates space classes based on the grid gutter sizes.
-*/
-@media screen and (min-width: 0px) {
-  .mar-gutter {
-    margin: 25px;
-  }
-}
-
-@media screen and (min-width: 540px) {
-  .mar-gutter {
-    margin: 20px;
-  }
-}
-
-@media screen and (min-width: 0px) {
-  .pad-gutter {
-    padding: 25px;
-  }
-}
-
-@media screen and (min-width: 540px) {
-  .pad-gutter {
-    padding: 20px;
-  }
-}
-
-@media screen and (min-width: 0px) {
-  .mar-t-gutter {
-    margin-top: 25px;
-  }
-}
-
-@media screen and (min-width: 540px) {
-  .mar-t-gutter {
-    margin-top: 20px;
-  }
-}
-
-@media screen and (min-width: 0px) {
-  .pad-t-gutter {
-    padding-top: 25px;
-  }
-}
-
-@media screen and (min-width: 540px) {
-  .pad-t-gutter {
-    padding-top: 20px;
-  }
-}
-
-@media screen and (min-width: 0px) {
-  .mar-b-gutter {
-    margin-bottom: 25px;
-  }
-}
-
-@media screen and (min-width: 540px) {
-  .mar-b-gutter {
-    margin-bottom: 20px;
-  }
-}
-
-@media screen and (min-width: 0px) {
-  .pad-b-gutter {
-    padding-bottom: 25px;
-  }
-}
-
-@media screen and (min-width: 540px) {
-  .pad-b-gutter {
-    padding-bottom: 20px;
-  }
-}
-
-@media screen and (min-width: 0px) {
-  .mar-l-gutter {
-    margin-left: 25px;
-  }
-}
-
-@media screen and (min-width: 540px) {
-  .mar-l-gutter {
-    margin-left: 20px;
-  }
-}
-
-@media screen and (min-width: 0px) {
-  .pad-l-gutter {
-    padding-left: 25px;
-  }
-}
-
-@media screen and (min-width: 540px) {
-  .pad-l-gutter {
-    padding-left: 20px;
-  }
-}
-
-@media screen and (min-width: 0px) {
-  .mar-r-gutter {
-    margin-right: 25px;
-  }
-}
-
-@media screen and (min-width: 540px) {
-  .mar-r-gutter {
-    margin-right: 20px;
-  }
-}
-
-@media screen and (min-width: 0px) {
-  .pad-r-gutter {
-    padding-right: 25px;
-  }
-}
-
-@media screen and (min-width: 540px) {
-  .pad-r-gutter {
-    padding-right: 20px;
-  }
-}
-
 .mar-x-auto {
   margin-left: auto;
   margin-right: auto;
@@ -1142,30 +975,12 @@ a:hover {
   font-size: 23px;
 }
 
-@media screen and (min-width: 768px) {
-  .font-gamma {
-    font-size: 24px;
-  }
-}
-
 .font-delta {
   font-size: 28px;
 }
 
-@media screen and (min-width: 768px) {
-  .font-delta {
-    font-size: 36px;
-  }
-}
-
 .font-omega {
   font-size: 42px;
-}
-
-@media screen and (min-width: 768px) {
-  .font-omega {
-    font-size: 56px;
-  }
 }
 
 /*
@@ -1237,54 +1052,6 @@ a:hover {
   text-align: center;
 }
 
-@media screen and (min-width: 0px) {
-  .align-l--small {
-    text-align: left;
-  }
-  .align-r--small {
-    text-align: right;
-  }
-  .align-c--small {
-    text-align: center;
-  }
-}
-
-@media screen and (min-width: 540px) {
-  .align-l--medium {
-    text-align: left;
-  }
-  .align-r--medium {
-    text-align: right;
-  }
-  .align-c--medium {
-    text-align: center;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .align-l--large {
-    text-align: left;
-  }
-  .align-r--large {
-    text-align: right;
-  }
-  .align-c--large {
-    text-align: center;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .align-l--xlarge {
-    text-align: left;
-  }
-  .align-r--xlarge {
-    text-align: right;
-  }
-  .align-c--xlarge {
-    text-align: center;
-  }
-}
-
 /*
   DISPLAY
 */
@@ -1308,82 +1075,14 @@ a:hover {
   display: table-cell;
 }
 
-@media screen and (min-width: 0px) {
-  .inline--small {
-    display: inline;
-  }
-  .block--small {
-    display: block;
-  }
-  .inline-block--small {
-    display: inline-block;
-  }
-  .table--small {
-    display: table;
-  }
-  .table-cell--small {
-    display: table-cell;
-  }
-}
-
-@media screen and (min-width: 540px) {
-  .inline--medium {
-    display: inline;
-  }
-  .block--medium {
-    display: block;
-  }
-  .inline-block--medium {
-    display: inline-block;
-  }
-  .table--medium {
-    display: table;
-  }
-  .table-cell--medium {
-    display: table-cell;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .inline--large {
-    display: inline;
-  }
-  .block--large {
-    display: block;
-  }
-  .inline-block--large {
-    display: inline-block;
-  }
-  .table--large {
-    display: table;
-  }
-  .table-cell--large {
-    display: table-cell;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .inline--xlarge {
-    display: inline;
-  }
-  .block--xlarge {
-    display: block;
-  }
-  .inline-block--xlarge {
-    display: inline-block;
-  }
-  .table--xlarge {
-    display: table;
-  }
-  .table-cell--xlarge {
-    display: table-cell;
-  }
-}
-
-.clearfix::after {
-  clear: both;
-  content: "";
+.clearfix:before,
+.clearfix:after {
+  content: " ";
   display: table;
+}
+
+.clearfix:after {
+  clear: both;
 }
 
 .clear-l {
@@ -1414,102 +1113,6 @@ a:hover {
   float: none;
 }
 
-@media screen and (min-width: 0px) {
-  .clear-l--small {
-    clear: left;
-  }
-  .clear-r--small {
-    clear: right;
-  }
-  .clear-b--small {
-    clear: both;
-  }
-  .clear-n--small {
-    clear: none;
-  }
-  .float-l--small {
-    float: left;
-  }
-  .float-r--small {
-    float: right;
-  }
-  .float-n--small {
-    float: none;
-  }
-}
-
-@media screen and (min-width: 540px) {
-  .clear-l--medium {
-    clear: left;
-  }
-  .clear-r--medium {
-    clear: right;
-  }
-  .clear-b--medium {
-    clear: both;
-  }
-  .clear-n--medium {
-    clear: none;
-  }
-  .float-l--medium {
-    float: left;
-  }
-  .float-r--medium {
-    float: right;
-  }
-  .float-n--medium {
-    float: none;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .clear-l--large {
-    clear: left;
-  }
-  .clear-r--large {
-    clear: right;
-  }
-  .clear-b--large {
-    clear: both;
-  }
-  .clear-n--large {
-    clear: none;
-  }
-  .float-l--large {
-    float: left;
-  }
-  .float-r--large {
-    float: right;
-  }
-  .float-n--large {
-    float: none;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .clear-l--xlarge {
-    clear: left;
-  }
-  .clear-r--xlarge {
-    clear: right;
-  }
-  .clear-b--xlarge {
-    clear: both;
-  }
-  .clear-n--xlarge {
-    clear: none;
-  }
-  .float-l--xlarge {
-    float: left;
-  }
-  .float-r--xlarge {
-    float: right;
-  }
-  .float-n--xlarge {
-    float: none;
-  }
-}
-
 /*
   HIDE
 */
@@ -1527,58 +1130,6 @@ a:hover {
 
 .gone {
   display: none;
-}
-
-@media screen and (min-width: 0px) {
-  .hide--small {
-    position: absolute !important;
-    height: 1px;
-    width: 1px;
-    overflow: hidden;
-    clip: rect(1px, 1px, 1px, 1px);
-  }
-  .gone--small {
-    display: none;
-  }
-}
-
-@media screen and (min-width: 540px) {
-  .hide--medium {
-    position: absolute !important;
-    height: 1px;
-    width: 1px;
-    overflow: hidden;
-    clip: rect(1px, 1px, 1px, 1px);
-  }
-  .gone--medium {
-    display: none;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .hide--large {
-    position: absolute !important;
-    height: 1px;
-    width: 1px;
-    overflow: hidden;
-    clip: rect(1px, 1px, 1px, 1px);
-  }
-  .gone--large {
-    display: none;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .hide--xlarge {
-    position: absolute !important;
-    height: 1px;
-    width: 1px;
-    overflow: hidden;
-    clip: rect(1px, 1px, 1px, 1px);
-  }
-  .gone--xlarge {
-    display: none;
-  }
 }
 
 /*

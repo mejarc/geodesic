@@ -7,21 +7,8 @@
   attention to how the rest of the system changes.
 */
 
-@mixin font-scale($breakpoint, $size) {
-  @include media($breakpoint) { font-size: $size; }
-}
-
 .font-alpha { font-size: 15px; }
 .font-beta { font-size: 20px; }
-.font-gamma {
-  font-size: 23px;
-  @include font-scale($large-up, 24px);
-}
-.font-delta {
-  font-size: 28px;
-  @include font-scale($large-up, 36px);
-}
-.font-omega {
-  font-size: 42px;
-  @include font-scale($large-up, 56px);
-}
+.font-gamma { font-size: 23px; }
+.font-delta { font-size: 28px; }
+.font-omega { font-size: 42px; }

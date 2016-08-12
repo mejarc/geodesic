@@ -5,14 +5,6 @@ var sass        = require('gulp-sass');
 var parker      = require('gulp-parker');
 var connect     = require('gulp-connect');
 
-var bourbon     = require('bourbon');
-var neat        = require('bourbon-neat');
-
-var sassIncludes = [
-  bourbon.includePaths,
-  neat.includePaths
-]
-
 var SRC_DIR  = './scss/';
 var DEST_DIR = './css/';
 
@@ -27,8 +19,7 @@ gulp.task('connect', function() {
 gulp.task('sass', function() {
   gulp.src(SRC_DIR + '*.scss')
     .pipe(sass({
-      outputStyle: 'expanded',
-      includePaths: sassIncludes
+      outputStyle: 'compressed'
     }).on('error', sass.logError))
     .pipe(gulp.dest(DEST_DIR))
     .pipe(parker())
@@ -42,8 +33,7 @@ gulp.task('sass:watch', function() {
 gulp.task('parker', function() {
   return gulp.src(SRC_DIR + '*.scss')
     .pipe(sass({
-      outputStyle: 'compressed',
-      includePaths: sassIncludes
+      outputStyle: 'compressed'
     }).on('error', sass.logError))
     .pipe(parker());
 });
