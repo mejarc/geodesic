@@ -9,14 +9,12 @@ $max-width: 720px;
 $grid-breakpoints: (
   small: (
     query: small up,
-    columns: 4,
     gutter: 25px,
-    sub-grids: 3
+    grids: 3 6
   ),
   large: (
     query: medium up,
-    columns: 8,
     gutter: 20px,
-    sub-grids: 4 6
+    grids: 4 6 12
   )
 );

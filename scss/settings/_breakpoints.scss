@@ -60,34 +60,34 @@ $breakpoints: (
   @return map-get($breakpoint, 'max');
 }
 
-@mixin for-breakpoint($query) {
+// Returns a media query based on a breakpoint
+@function get-media-string($query) {
   $breakpoint: get-breakpoint(nth($query, 1));
 
-  // If you just a breakpoint name (like 'large')...
+  // If you just provided a breakpoint name (like 'large')...
   @if length($query) == 1 {
     // Then we just pass it through and assume you wanted a min-width query
-    @media (min-width: get-breakpoint-min($query)) {
-      @content;
-    }
+    @return '(min-width: #{get-breakpoint-min($breakpoint)})';
   // Otherwise we start cutting it up and you can have more advanced queries
   } @else if length($query) == 2 {
     $directive: nth($query, 2);
 
     @if $directive == "up" {
       // Breakpoint min-width, no max
-      @media (min-width: get-breakpoint-min($breakpoint)) {
-        @content;
-      }
+      @return '(min-width: #{get-breakpoint-min($breakpoint)})';
     } @else if $directive == "only" {
       // Breakpoint min-width and max-width
-      @media (min-width: get-breakpoint-min($breakpoint)) and (max-width: get-breakpoint-max($breakpoint)) {
-        @content;
-      }
+      @return '(min-width: #{get-breakpoint-min($breakpoint)}) and (max-width: #{get-breakpoint-max($breakpoint)})';
     } @else if $directive == "under" {
       // Up to the named breakpoint, non-inclusive
-      @media (max-width: get-breakpoint-max(get-previous-breakpoint($breakpoint))) {
-        @content;
-      }
+      @debug $breakpoint;
+      @return '(max-width: #{get-breakpoint-max(get-previous-breakpoint($breakpoint))})';
     }
+  }
+}
+
+@mixin for-breakpoint($query) {
+  @media #{get-media-string($query)} {
+    @content;
   }
 }

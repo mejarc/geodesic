@@ -1,9 +1,9 @@
 'use strict';
 
-var gulp        = require('gulp');
-var sass        = require('gulp-sass');
-var parker      = require('gulp-parker');
-var connect     = require('gulp-connect');
+var gulp     = require('gulp');
+var sass     = require('gulp-sass');
+var parker   = require('gulp-parker');
+var connect  = require('gulp-connect');
 
 var SRC_DIR  = './scss/';
 var DEST_DIR = './css/';
@@ -19,7 +19,7 @@ gulp.task('connect', function() {
 gulp.task('sass', function() {
   gulp.src(SRC_DIR + '*.scss')
     .pipe(sass({
-      outputStyle: 'compressed'
+      outputStyle: 'expanded'
     }).on('error', sass.logError))
     .pipe(gulp.dest(DEST_DIR))
     .pipe(parker())
