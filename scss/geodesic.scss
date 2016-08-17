@@ -3,10 +3,13 @@
 // Helpers provide useful mixins and functions to make class composition easier
 @import "helpers/flex";
 @import "helpers/math";
+@import "helpers/string-replace";
+@import "helpers/responder";
 
 // Settings come first, to set up the system according to some basic parameters
 @import "settings/breakpoints";
 @import "settings/grid";
+@import "settings/space";
 @import "settings/colors";
 @import "settings/typography";
 
@@ -20,6 +23,8 @@
 // Objects are re-usable interface patterns
 @import "objects/grid";
 @import "objects/buttons";
+@import "objects/flag";
+@import "objects/aspect-ratio";
 
 // Utilities come last so that they can always modify objects and elements
 @import "utilities/color";

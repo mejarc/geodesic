@@ -19,5 +19,13 @@
   display: none;
 }
 
-.hide { @include hide; }
-.gone { @include gone; }
+.hide { 
+  @include responder(small, medium, large) {
+    @include hide;
+  }
+}
+.gone {
+  @include responder(small, medium, large) {
+    @include gone;
+  }
+}

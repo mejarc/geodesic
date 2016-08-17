@@ -146,12 +146,36 @@ td, th {
   https://github.com/dropbox/scooter/blob/master/scss/functions/_maths.scss
 */
 /*
+  RESPONDER
+  The `responder` mixin automatically generates breakpoint-specific classes
+  for a given non-responsive class.
+
+  ```
+  .class {
+    @include responder(small, large) {
+      stuff: yes;
+    }
+  }
+
+  => .class { stuff: yes; }
+  => @media (min-width: 500px) { .class--small { stuff: yes; } }
+  => @media (min-width: 961px) { .class--large { stuff: yes; } }
+  ```
+*/
+/*
   BREAKPOINT SETTINGS
+*/
+/*
+  BREAKPOINT TOOLS
 */
 /*
   GRID SETTINGS
   List of grids with their individual breakpoints, values, and sub-grids. Grid
   classes are generated from these settings in objects/_grid.scss
+*/
+/*
+  SPACE SETTINGS
+  Used to generate spacing utility classes
 */
 /*
   COLOR SETTINGS
@@ -299,6 +323,16 @@ body {
   }
   .small-offset-6-of-6 {
     margin-left: 100%;
+  }
+  .small-no-gutter-left {
+    padding-left: 0;
+  }
+  .small-no-gutter-right {
+    padding-right: 0;
+  }
+  .small-no-gutter {
+    padding-left: 0;
+    padding-right: 0;
   }
   .small-gutter-left {
     padding-left: 13px;
@@ -577,6 +611,16 @@ body {
   .large-offset-12-of-12 {
     margin-left: 100%;
   }
+  .large-no-gutter-left {
+    padding-left: 0;
+  }
+  .large-no-gutter-right {
+    padding-right: 0;
+  }
+  .large-no-gutter {
+    padding-left: 0;
+    padding-right: 0;
+  }
   .large-gutter-left {
     padding-left: 10px;
   }
@@ -601,6 +645,60 @@ body {
   border: 0;
   cursor: pointer;
   text-align: center;
+}
+
+/*
+  FLAG
+  Used to vertically align a fluid-width element and a fixed-width element next to
+  one another. Pinched from Dropbox's Scooter.
+  https://github.com/dropbox/scooter/blob/master/scss/objects/_flag.scss
+*/
+.flag {
+  display: table;
+  width: 100%;
+}
+
+.flag-fix,
+.flag-flex {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.flag-fix {
+  white-space: nowrap;
+}
+
+.flag-flex {
+  width: 100%;
+}
+
+/*
+  ASPECT RATIO
+  Maintain a given aspect ratio for an element, regardless of width
+  Code stolen shamelessly from mrmrs, hallowed be his name:
+  https://github.com/mrmrs/tachyons/blob/master/src/_utilities.css
+*/
+.ar-cinema {
+  height: 0;
+  padding-top: 56.25%;
+  position: relative;
+}
+
+.ar-square {
+  height: 0;
+  padding-top: 100%;
+  position: relative;
+}
+
+.ar-inner {
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1;
 }
 
 /*
@@ -740,10 +838,8 @@ body {
   Define spacing utility classes! I'm keeping some settings here because they're
   only used here and they make more sense in context.
 */
-/*
-  SPACE STEPS
-
-  Generates rules that look like:
+/* 
+  Generate math-based and grid-based spacing rules, like this:
 
   ```
   .mar-t-one { margin-top: 20px; }
@@ -1235,8 +1331,56 @@ body {
   clip: rect(1px, 1px, 1px, 1px);
 }
 
+@media (min-width: 500px) {
+  .hide--small {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+  }
+}
+
+@media (min-width: 701px) {
+  .hide--medium {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+  }
+}
+
+@media (min-width: 961px) {
+  .hide--large {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+  }
+}
+
 .gone {
   display: none;
+}
+
+@media (min-width: 500px) {
+  .gone--small {
+    display: none;
+  }
+}
+
+@media (min-width: 701px) {
+  .gone--medium {
+    display: none;
+  }
+}
+
+@media (min-width: 961px) {
+  .gone--large {
+    display: none;
+  }
 }
 
 /*
