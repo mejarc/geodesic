@@ -1,6 +1,6 @@
-/*
-  BREAKPOINT TOOLS
-*/
+//
+// BREAKPOINT TOOLS
+//
 
 // Returns breakpoint settings by name
 @function get-breakpoint($name) {
@@ -35,14 +35,6 @@
 // Returns the maximum width in a breakpoint's settings
 @function get-breakpoint-max($breakpoint) {
   @return map-get($breakpoint, 'max');
-}
-
-@function get-breakpoint-name($query) {
-  @return map-get($breakpoints, nth($query, 1));
-}
-
-@function to-list($value) {
-  @return if(type-of($value) != list, ($value,), $value);
 }
 
 // Returns a media query based on a breakpoint
