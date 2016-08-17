@@ -1,20 +1,20 @@
-/*
-  RESPONDER
-  The `responder` mixin automatically generates breakpoint-specific classes
-  for a given non-responsive class.
-
-  ```
-  .class {
-    @include responder(small, large) {
-      stuff: yes;
-    }
-  }
-
-  => .class { stuff: yes; }
-  => @media (min-width: 500px) { .class--small { stuff: yes; } }
-  => @media (min-width: 961px) { .class--large { stuff: yes; } }
-  ```
-*/
+//
+// RESPONDER
+// The `responder` mixin automatically generates breakpoint-specific classes
+// for a given non-responsive class.
+//
+// ```
+// .class {
+//   @include responder(small, large) {
+//     stuff: yes;
+//   }
+// }
+//
+// => .class { stuff: yes; }
+// => @media (min-width: 500px) { .class--small { stuff: yes; } }
+// => @media (min-width: 961px) { .class--large { stuff: yes; } }
+// ```
+//
 
 @mixin responder($queries...) {
   @content;

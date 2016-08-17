@@ -127,75 +127,10 @@ td, th {
   font-weight: normal;
 }
 
-/*
-  FLEX HELPERS
-
-  Common flex tasks in plain English, because you shouldn't have to learn what
-  "flex basis" means in order to make a web page. *I* don't even know what it
-  means.
-
-  First do `@include flex;`, then apply one of these rules to your object class.
-*/
-/*
-  MATH HELPERS
-
-  Useful math for making scales of values that stay in line when the unit
-  changes. Stay consistent (when it makes sense)!
-
-  Thanks to Dropbox's Scooter for this idea + file.
-  https://github.com/dropbox/scooter/blob/master/scss/functions/_maths.scss
-*/
-/*
-  RESPONDER
-  The `responder` mixin automatically generates breakpoint-specific classes
-  for a given non-responsive class.
-
-  ```
-  .class {
-    @include responder(small, large) {
-      stuff: yes;
-    }
-  }
-
-  => .class { stuff: yes; }
-  => @media (min-width: 500px) { .class--small { stuff: yes; } }
-  => @media (min-width: 961px) { .class--large { stuff: yes; } }
-  ```
-*/
-/*
-  BREAKPOINT SETTINGS
-*/
-/*
-  BREAKPOINT TOOLS
-*/
-/*
-  GRID SETTINGS
-  List of grids with their individual breakpoints, values, and sub-grids. Grid
-  classes are generated from these settings in objects/_grid.scss
-*/
-/*
-  SPACE SETTINGS
-  Used to generate spacing utility classes
-*/
-/*
-  COLOR SETTINGS
-
-  Map of colors to generate classes, and a function to return a color based
-  on name for manually-written classes.
-*/
-/*
-  TYPOGRAPHY RULES
-
-  Font stacks, pervasive typo settings of all kinds.
-*/
 body {
   font-family: "Roboto", Helvetica, sans-serif;
 }
 
-/*
-  GRID
-  Responsive chainable grid classes. These are all generated from the settings in $grid-breakpoints.
-*/
 .column {
   position: relative;
   float: left;
@@ -647,12 +582,6 @@ body {
   text-align: center;
 }
 
-/*
-  FLAG
-  Used to vertically align a fluid-width element and a fixed-width element next to
-  one another. Pinched from Dropbox's Scooter.
-  https://github.com/dropbox/scooter/blob/master/scss/objects/_flag.scss
-*/
 .flag {
   display: table;
   width: 100%;
@@ -672,12 +601,6 @@ body {
   width: 100%;
 }
 
-/*
-  ASPECT RATIO
-  Maintain a given aspect ratio for an element, regardless of width
-  Code stolen shamelessly from mrmrs, hallowed be his name:
-  https://github.com/mrmrs/tachyons/blob/master/src/_utilities.css
-*/
 .ar-cinema {
   height: 0;
   padding-top: 56.25%;
@@ -701,9 +624,6 @@ body {
   z-index: 1;
 }
 
-/*
-  COLORS
-*/
 .color-black {
   color: #000000;
 }
@@ -832,24 +752,6 @@ body {
   background-color: #EF6B9E;
 }
 
-/*
-  SPACE
-
-  Define spacing utility classes! I'm keeping some settings here because they're
-  only used here and they make more sense in context.
-*/
-/* 
-  Generate math-based and grid-based spacing rules, like this:
-
-  ```
-  .mar-t-one { margin-top: 20px; }
-  .mar-b-half { margin-bottom: 10px; }
-  .pad-y-double {
-    padding-top: 40px;
-    padding-bottom: 40px;
-  }
-  ```
-*/
 .mar-y-zero {
   margin-top: 0;
   margin-bottom: 0;
@@ -1156,9 +1058,6 @@ body {
 }
 
 /*
-  TYPE
-*/
-/*
   TYPE SIZES
 
   The sizes allow for a responsive scale for each class, so that scaling type up
@@ -1255,9 +1154,6 @@ body {
   text-align: center;
 }
 
-/*
-  DISPLAY
-*/
 .inline {
   display: inline;
 }
@@ -1316,13 +1212,6 @@ body {
   float: none;
 }
 
-/*
-  HIDE
-*/
-/*
-  Totally nixes an element, making it inaccessible to screen readers and pretty
-  much anything else except javascript, which sees straight through to the DOM.
-*/
 .hide {
   position: absolute !important;
   height: 1px;
@@ -1383,11 +1272,6 @@ body {
   }
 }
 
-/*
-  MEDIA
-  NOTE 4/15/16: possibly move these or expand upon this file? this group seems
-  nebulously-defined at this point
-*/
 .constrain {
   max-width: 100%;
 }

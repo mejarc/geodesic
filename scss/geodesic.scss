@@ -16,10 +16,6 @@
 // Then we set some defaults, before any of the classy magic starts
 @import "defaults";
 
-// Contexts modify elements under them. Use them to add rules to unclassed
-// elements in a safe, scoped way
-@import "contexts/base";
-
 // Objects are re-usable interface patterns
 @import "objects/grid";
 @import "objects/buttons";

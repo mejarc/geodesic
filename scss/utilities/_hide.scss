@@ -1,6 +1,6 @@
-/*
-  HIDE
-*/
+//
+// HIDE
+//
 
 // Visually hides an element
 @mixin hide() {
@@ -11,10 +11,8 @@
   clip: rect(1px, 1px, 1px, 1px);
 }
 
-/*
-  Totally nixes an element, making it inaccessible to screen readers and pretty
-  much anything else except javascript, which sees straight through to the DOM.
-*/
+// Totally nixes an element, making it inaccessible to screen readers and pretty
+// much anything else except javascript, which sees straight through to the DOM.
 @mixin gone() {
   display: none;
 }

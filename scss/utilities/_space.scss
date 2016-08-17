@@ -1,22 +1,22 @@
-/*
-  SPACE
+//
+// SPACE
+//
+// Define spacing utility classes! I'm keeping some settings here because they're
+// only used here and they make more sense in context.
+//
 
-  Define spacing utility classes! I'm keeping some settings here because they're
-  only used here and they make more sense in context.
-*/
-
-/* 
-  Generate math-based and grid-based spacing rules, like this:
-
-  ```
-  .mar-t-one { margin-top: 20px; }
-  .mar-b-half { margin-bottom: 10px; }
-  .pad-y-double {
-    padding-top: 40px;
-    padding-bottom: 40px;
-  }
-  ```
-*/
+//
+// Generate math-based and grid-based spacing rules, like this:
+//
+// ```
+// .mar-t-one { margin-top: 20px; }
+// .mar-b-half { margin-bottom: 10px; }
+// .pad-y-double {
+//   padding-top: 40px;
+//   padding-bottom: 40px;
+// }
+// ```
+//
 
 @each $step-name, $step in $space-steps {
   .mar-y-#{$step-name} {
