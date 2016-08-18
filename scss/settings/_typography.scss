@@ -1,8 +1,44 @@
-/*
-  TYPOGRAPHY RULES
+//
+// TYPOGRAPHY RULES
+// Font stacks, pervasive typo settings of all kinds.
+//
 
-  Font stacks, pervasive typo settings of all kinds.
-*/
+// Each font stack gets a name and a generated class, like: `font-text`
+$font-stacks: (
+  'text': '"Roboto", Arial, sans-serif',
+  'code': '"Source Code Pro", monospace'
+);
 
-$text-font: "Roboto", Helvetica, sans-serif;
-$code-font: "Source Code Pro", Consolas, Menlo, monospace;
+// Named font weights!
+$font-weights: (
+  'book': 400,
+  'bold': 700,
+);
+
+// Each font size name has a set of sizes for different breakpoints
+$type-scale: (
+  'alpha': (
+    'tiny': 1.8rem,
+    'medium': 2.0rem
+  ),
+  'beta': (
+    'tiny': 2.1rem,
+    'medium': 2.4rem
+  ),
+  'gamma': (
+    'tiny': 2.8rem,
+    'medium': 3.4rem
+  ),
+  'delta': (
+    'tiny': 3.1rem,
+    'medium': 4rem
+  )
+);
+
+// Named line heights!
+$leading-scale: (
+  'solid': 1,
+  'close': 1.15,
+  'caption': 1.25,
+  'text': 1.4
+);

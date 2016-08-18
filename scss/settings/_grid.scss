@@ -1,22 +1,20 @@
-/*
-  GRID SETTINGS
-  List of grids with their individual breakpoints, values, and sub-grids. Grid
-  classes are generated from these settings in objects/_grid.scss
-*/
+//
+// GRID SETTINGS
+// List of grids with their individual breakpoints, values, and sub-grids. Grid
+// classes are generated from these settings in objects/_grid.scss
+//
 
 $max-width: 720px;
 
 $grid-breakpoints: (
   small: (
-    query: $small-up,
-    columns: 4,
+    query: small up,
     gutter: 25px,
-    sub-grids: 3
+    grids: 3 6
   ),
   large: (
-    query: $medium-up,
-    columns: 8,
+    query: medium up,
     gutter: 20px,
-    sub-grids: 4 6
+    grids: 4 6 12
   )
 );

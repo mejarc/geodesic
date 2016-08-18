@@ -1,6 +1,9 @@
+//
+// BUTTONS
+//
+
 .button {
-  @include appearance(none);
-  box-sizing: border-box;
+  appearance: none;
   display: inline-block;
   padding: 0.75em;
 

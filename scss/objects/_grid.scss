@@ -1,64 +1,82 @@
-/*
-  GRID
-  Responsive chainable grid classes, complete with subgrids. These are all
-  generated from the settings in $grids-breakpoints.
-*/
+//
+// GRID
+// Responsive chainable grid classes. These are all generated from the settings in $grid-breakpoints.
+//
 
-@mixin column($width, $gutter) {
+.column {
   position: relative;
   float: left;
-  width: $width;
-  padding-left: $gutter / 2;
-  padding-right: $gutter / 2;
+}
+
+.gutter {
+  @each $grid-name, $grid-settings in $grid-breakpoints {
+    $query: map-get($grid-settings, query);
+    $gutter: map-get($grid-settings, gutter);
+
+    @include for-breakpoint($query) {
+      padding-left: half($gutter);
+      padding-right: half($gutter);
+    }
+  }
 }
 
 @each $grid-name, $grid-settings in $grid-breakpoints {
   $query: map-get($grid-settings, query);
-  $columns: map-get($grid-settings, columns);
   $gutter: map-get($grid-settings, gutter);
-  $sub-grids: map-get($grid-settings, sub-grids);
+  $grids: map-get($grid-settings, grids);
 
-  @include media($query) {
-    @for $i from 1 through $columns {
-      .#{$grid-name}-#{$i} {
-        @include column(percentage($i / $columns), $gutter);
-      }
+  @include for-breakpoint($query) {
+    @each $columns in $grids {
+      @for $i from 1 through $columns {
+        // e.g. small-1-of-4 => width: 25%
+        .#{$grid-name}-#{$i}-of-#{$columns} {
+          width: percentage($i / $columns);
+        }
 
-      .#{$grid-name}-push-#{$i} {
-        left: percentage($i / $columns);
-      }
+        // e.g. medium-push-3-of-8 => left: 37.5%
+        .#{$grid-name}-push-#{$i}-of-#{$columns} {
+          left: percentage($i / $columns);
+        }
 
-      .#{$grid-name}-pull-#{$i} {
-        left: -(percentage($i / $columns));
-      }
+        // e.g. large-pull-1-of-12 => left: -8.3333%
+        .#{$grid-name}-pull-#{$i}-of-#{$columns} {
+          left: -(percentage($i / $columns));
+        }
 
-      .#{$grid-name}-offset-#{$i} {
-        margin-left: percentage($i / $columns);
+        // e.g. small-offset-3-of-6 => margin-left: 50%
+        .#{$grid-name}-offset-#{$i}-of-#{$columns} {
+          margin-left: percentage($i / $columns);
+        }
       }
     }
 
-    @each $sub-grid-columns in $sub-grids {
-      @for $i from 1 through $sub-grid-columns {
-        .#{$grid-name}-#{$i}-of-#{$sub-grid-columns} {
-          @include column(percentage($i / $columns), $gutter);
-        }
-      }
+    // Specific gutters for if regular old .gutter won't cut it
+    // e.g. small-gutter-left => padding-left: 12.5px
+    .#{$grid-name}-no-gutter-left {
+      padding-left: 0;
+    }
+    .#{$grid-name}-no-gutter-right {
+      padding-right: 0;
+    }
+    .#{$grid-name}-no-gutter {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .#{$grid-name}-gutter-left {
+      padding-left: half($gutter);
+    }
+    .#{$grid-name}-gutter-right {
+      padding-right: half($gutter);
+    }
+    .#{$grid-name}-gutter {
+      padding-left: half($gutter);
+      padding-right: half($gutter);
     }
   }
 }
 
 // Columns go in rows to set up the proper max width and for clearfixing
-.grid-row {
+.grid {
   max-width: $max-width;
   margin: 0 auto;
-
-  @each $grid-name, $grid-settings in $grid-breakpoints {
-    $query: map-get($grid-settings, query);
-    $gutter: map-get($grid-settings, gutter);
-
-    @include media($query) {
-      padding-left: $gutter / 2;
-      padding-right: $gutter / 2;
-    }
-  }
 }

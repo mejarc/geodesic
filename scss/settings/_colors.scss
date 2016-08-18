@@ -1,18 +1,27 @@
-/*
-  COLOR SETTINGS
-
-  Map of colors to generate classes, and a function to return a color based
-  on name for manually-written classes.
-*/
+//
+// COLOR SETTINGS
+//
+// Map of colors to generate classes, and a function to return a color based
+// on name for manually-written classes.
+//
 
 $colors: (
-  'blue': #6899C6,
-  'navy': #3F3E4C,
-  'green': #7FC28F,
-  'pink': #F8708E,
-  'gray': #656976,
-  'offblack': #222,
-  'white': #FFFFFF
+  'black': #000000,
+  'off-black': #16161E,
+  'charcoal': #46464F,
+  'mid-gray': #96969E,
+  'light-gray': #D0D0D6,
+  'off-white': #F2F2F6,
+  'white': #FFFFFF,
+  'blue': #588FF5,
+  'indigo': #4E4F94,
+  'dark-indigo': #32395B,
+  'orange': #ED9177,
+  'red': #D0455E,
+  'cranberry': #782434,
+  'yellow': #F6CA75,
+  'green': #AFD574,
+  'pink': #EF6B9E
 );
 
 @function get-color($name) {

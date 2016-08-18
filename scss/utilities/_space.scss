@@ -1,33 +1,44 @@
-/*
-  SPACE
+//
+// SPACE
+//
+// Define spacing utility classes! I'm keeping some settings here because they're
+// only used here and they make more sense in context.
+//
 
-  Define spacing utility classes! I'm keeping some settings here because they're
-  only used here and they make more sense in context.
-*/
+//
+// Generate math-based and grid-based spacing rules, like this:
+//
+// ```
+// .mar-t-one { margin-top: 20px; }
+// .mar-b-half { margin-bottom: 10px; }
+// .pad-y-double {
+//   padding-top: 40px;
+//   padding-bottom: 40px;
+// }
+// ```
+//
 
-$space-unit: 20px;
+@each $step-name, $step in $space-steps {
+  .mar-y-#{$step-name} {
+    margin-top: $step;
+    margin-bottom: $step;
+  }
 
-$space-directions: (
-  '': '',
-  't': 'top',
-  'b': 'bottom',
-  'l': 'left',
-  'r': 'right'
-);
+  .pad-y-#{$step-name} {
+    padding-top: $step;
+    padding-bottom: $step;
+  }
+}
 
-$space-steps: (
-  'zero': 0,
-  'quarter': quarter($space-unit),
-  'half': half($space-unit),
-  'one': $space-unit,
-  'double': double($space-unit),
-  'quad': quadruple($space-unit)
-);
+@each $dir-name, $dir in $space-directions {
+  @if str-length($dir-name) > 0 { $dir-name: '-' + $dir-name; }
+  @if str-length($dir) > 0 { $dir: '-' + $dir; }
 
-// Generate math-based and grid-based spacing rules
-
-@import "space.steps";
-@import "space.gutter";
+  @each $step-name, $step in $space-steps {
+    .mar#{$dir-name}-#{$step-name} { margin#{$dir}: $step; }
+    .pad#{$dir-name}-#{$step-name} { padding#{$dir}: $step; }
+  }
+}
 
 // Non-mathy functional spacing rules. The fewer of these, the better!
 

@@ -1,0 +1,23 @@
+//
+// SPACE SETTINGS
+// Used to generate spacing utility classes
+//
+
+$space-unit: 20px;
+
+$space-directions: (
+  '': '',
+  't': 'top',
+  'b': 'bottom',
+  'l': 'left',
+  'r': 'right'
+);
+
+$space-steps: (
+  'zero': 0,
+  'quarter': quarter($space-unit),
+  'half': half($space-unit),
+  'one': $space-unit,
+  'double': double($space-unit),
+  'quad': quadruple($space-unit)
+);

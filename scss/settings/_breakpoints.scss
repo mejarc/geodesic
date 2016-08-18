@@ -1,31 +1,29 @@
-/*
-  BREAKPOINT SETTINGS
+//
+// BREAKPOINT SETTINGS
+//
 
-  These variables set up media queries that you can use throughout the system.
-  Use a breakpoint variable inside the `media` mixin to apply rules within a
-  media query. Like so:
+$breakpoints: (
+  'tiny': (
+    'min': 0px,
+    'max': 499px
+  ),
+  'small': (
+    'min': 500px,
+    'max': 700px
+  ),
+  'medium': (
+    'min': 701px,
+    'max': 960px
+  ),
+  'large': (
+    'min': 961px,
+    'max': 1279px,
+  ),
+  'xlarge': (
+    'min': 1280px,
+    'max': none
+  )
+);
 
-  ```
-  @include media($small-up) {
-    web-design: is-fun;
-  }
-  ```
-*/
-
-// Define site-wide breakpoints and settings for each
-
-$small-range:         0px 539px;
-$medium-range:        540px 767px;
-$large-range:         768px 1023px;
-$xlarge-range:        1024px;
-
-// Breakpoints include the total number of columns in each breakpoint's layout
-$small-only:          max-width nth($small-range, 2);
-$small-up:            min-width nth($small-range, 1);
-$medium-only:         min-width nth($medium-range, 1) max-width nth($medium-range, 2);
-$medium-up:           min-width nth($medium-range, 1);
-$up-to-large:         max-width nth($medium-range, 2);
-$large-only:          min-width nth($large-range, 1) max-width nth($large-range, 2);
-$large-up:            min-width nth($large-range, 1);
-$up-to-xlarge:        max-width nth($large-range, 2);
-$xlarge-up:           min-width nth($xlarge-range, 1);
+// Functions and mixins live here and probably don't need editing
+@import "breakpoints.tools";

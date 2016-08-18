@@ -1,6 +1,6 @@
-/*
-  HIDE
-*/
+//
+// HIDE
+//
 
 // Visually hides an element
 @mixin hide() {
@@ -11,30 +11,19 @@
   clip: rect(1px, 1px, 1px, 1px);
 }
 
-/*
-  Totally nixes an element, making it inaccessible to screen readers and pretty
-  much anything else except javascript, which sees straight through to the DOM.
-*/
+// Totally nixes an element, making it inaccessible to screen readers and pretty
+// much anything else except javascript, which sees straight through to the DOM.
 @mixin gone() {
   display: none;
 }
 
-.hide { @include hide; }
-.gone { @include gone; }
-
-$hide-sizes: (
-  'small': $small-up,
-  'medium': $medium-up,
-  'large': $large-up,
-  'xlarge': $xlarge-up
-);
-
-@each $name, $breakpoint in $hide-sizes {
-  // Separate base class with breakpoint abbreviation
-  $mod: '--' + $name;
-
-  @include media($breakpoint) {
-    .hide#{$mod} { @include hide; }
-    .gone#{$mod} { @include gone; }
+.hide { 
+  @include responder(small, medium, large) {
+    @include hide;
+  }
+}
+.gone {
+  @include responder(small, medium, large) {
+    @include gone;
   }
 }

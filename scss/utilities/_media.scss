@@ -1,8 +1,15 @@
-/*
-  MEDIA
-  NOTE 4/15/16: possibly move these or expand upon this file? this group seems
-  nebulously-defined at this point
-*/
+//
+// MEDIA
+//
 
 .constrain { max-width: 100% }
+
 .circle { border-radius: 100% }
+
+.maximize { width: 100% }
+
+// Check https://css-tricks.com/almanac/properties/o/object-fit/ for usage
+.cover-in-container {
+  object-fit: cover;
+  object-position: center center;
+}
