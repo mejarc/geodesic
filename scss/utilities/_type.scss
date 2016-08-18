@@ -25,6 +25,7 @@
   }
 }
 
+// Generating line heights
 @each $name, $line in $leading-scale {
   .line-#{$name} { line-height: $line; }
 }
