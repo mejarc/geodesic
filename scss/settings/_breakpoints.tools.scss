@@ -37,6 +37,10 @@
   @return map-get($breakpoint, 'max');
 }
 
+@function to-list($value) {
+  @return if(type-of($value) != list, ($value,), $value);
+}
+
 // Returns a media query based on a breakpoint
 @function get-media-string($query) {
   $breakpoint: get-breakpoint(nth($query, 1));
@@ -57,13 +61,16 @@
       @return '(min-width: #{get-breakpoint-min($breakpoint)}) and (max-width: #{get-breakpoint-max($breakpoint)})';
     } @else if $directive == "under" {
       // Up to the named breakpoint, non-inclusive
-      @debug $breakpoint;
       @return '(max-width: #{get-breakpoint-max(get-previous-breakpoint($breakpoint))})';
     }
   }
 }
 
 @mixin for-breakpoint($query) {
+  @if type-of($query) == string {
+    $query: to-list($query);
+  }
+
   @media #{get-media-string($query)} {
     @content;
   }

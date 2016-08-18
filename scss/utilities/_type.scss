@@ -2,7 +2,33 @@
 // TYPE
 //
 
-@import "type.size";
-@import "type.line";
-@import "type.style";
-@import "type.alignment";
+// Generating font family stacks
+@each $name, $stack in $font-stacks {
+  .face-#{$name} { font-family: $stack; }
+}
+
+// Generating font weights
+@each $name, $weight in $font-weights {
+  .weight-#{$name} { font-weight: $weight; }
+}
+
+// Generating type scale
+@each $type-level, $type-breakpoints in $type-scale {
+  @debug $type-breakpoints;
+
+  @each $type-breakpoint in map-keys($type-breakpoints) {
+    @include for-breakpoint($type-breakpoint) {
+      .font-#{$type-level} {
+        font-size: map-get($type-breakpoints, $type-breakpoint);
+      }
+    }
+  }
+}
+
+@each $name, $line in $leading-scale {
+  .line-#{$name} { line-height: $line; }
+}
+
+.underline { text-decoration: underline; }
+.italic { font-style: italic; }
+

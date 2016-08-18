@@ -128,7 +128,7 @@ td, th {
 }
 
 body {
-  font-family: "Roboto", Helvetica, sans-serif;
+  font-family: Helvetica;
 }
 
 .column {
@@ -1057,37 +1057,70 @@ body {
   margin-right: auto;
 }
 
-/*
-  TYPE SIZES
-
-  The sizes allow for a responsive scale for each class, so that scaling type up
-  as screen sizes increase doesn't require multiple classes and our typography
-  doesn't become a mess of disparate rules. Switch 'em up if you need, but pay
-  attention to how the rest of the system changes.
-*/
-.font-alpha {
-  font-size: 15px;
+.face-text {
+  font-family: '"Roboto", Arial, sans-serif';
 }
 
-.font-beta {
-  font-size: 20px;
+.face-code {
+  font-family: '"Source Code Pro", monospace';
 }
 
-.font-gamma {
-  font-size: 23px;
+.weight-book {
+  font-weight: 400;
 }
 
-.font-delta {
-  font-size: 28px;
+.weight-bold {
+  font-weight: 700;
 }
 
-.font-omega {
-  font-size: 42px;
+@media (min-width: 0px) {
+  .font-alpha {
+    font-size: 1.8rem;
+  }
 }
 
-/*
-  TYPE LINE HEIGHTS
-*/
+@media (min-width: 701px) {
+  .font-alpha {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 0px) {
+  .font-beta {
+    font-size: 2.1rem;
+  }
+}
+
+@media (min-width: 701px) {
+  .font-beta {
+    font-size: 2.4rem;
+  }
+}
+
+@media (min-width: 0px) {
+  .font-gamma {
+    font-size: 2.8rem;
+  }
+}
+
+@media (min-width: 701px) {
+  .font-gamma {
+    font-size: 3.4rem;
+  }
+}
+
+@media (min-width: 0px) {
+  .font-delta {
+    font-size: 3.1rem;
+  }
+}
+
+@media (min-width: 701px) {
+  .font-delta {
+    font-size: 4rem;
+  }
+}
+
 .line-solid {
   line-height: 1;
 }
@@ -1096,62 +1129,20 @@ body {
   line-height: 1.15;
 }
 
+.line-caption {
+  line-height: 1.25;
+}
+
 .line-text {
   line-height: 1.4;
-}
-
-/*
-  TYPE STYLE
-*/
-.face-text {
-  font-family: "Roboto", Helvetica, sans-serif;
-}
-
-.face-code {
-  font-family: "Source Code Pro", Consolas, Menlo, monospace;
 }
 
 .underline {
   text-decoration: underline;
 }
 
-.tracked {
-  letter-spacing: 0.15em;
-}
-
-.uppercase {
-  text-transform: uppercase;
-}
-
 .italic {
   font-style: italic;
-}
-
-.light {
-  font-weight: 300;
-}
-
-.bold {
-  font-weight: bold;
-}
-
-.heavy {
-  font-weight: 900;
-}
-
-/*
-  TYPE ALIGNMENT
-*/
-.align-l {
-  text-align: left;
-}
-
-.align-r {
-  text-align: right;
-}
-
-.align-c {
-  text-align: center;
 }
 
 .inline {
