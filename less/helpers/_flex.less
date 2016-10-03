@@ -6,7 +6,23 @@
 // means.
 //
 // First apply `.flex;`, then apply one of these rules to your object class.
+
+// EXAMPLE
+// <div>
+//    <h1>Container with kids</h1>
+//    <ol class="container">
+//       <li>First</li>
+//       <li>Second</li>
+//       <li>Third</li>
+//     </ol>
+// </div>
 //
+// .container {
+//   .flex;
+//   .make-children-equal-height;
+//   .space-children-equally-to-edge;
+// }
+
 
 .flex {
   display: flex;
